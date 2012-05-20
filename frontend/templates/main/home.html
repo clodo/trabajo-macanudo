@@ -1,6 +1,18 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <h1>Trabajo Macanudo</h1>
-  <p>La home</p>
+  <div class="hero-unit">
+    <h2>Soy groso y quiero algo mejor</h2>
+    <br />
+    <form class="form-inline">
+      <label>Soy</label>
+      <input type="text" placeholder="[Ocupación Actual]" class="span2" />,
+      <label>y actualmente gano</label>
+      <input type="text" placeholder="[8.000]" class="span1" />
+      <label>por mes en</label>
+      <input type="text" placeholder="[Capital Federal]" class="span2" />.
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
 {% endblock %}
