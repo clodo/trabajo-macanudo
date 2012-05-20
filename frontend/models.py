@@ -1,4 +1,5 @@
 from frontend import db
+from datetime import datetime
 
 class Postulacion(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -8,8 +9,12 @@ class Postulacion(db.Model):
   area_actual = db.Column(db.String(120))
   pub_date = db.Column(db.DateTime())
 
-  def __init__(self, email, ocupacion_actual, sueldo_actual, area_actual, pub_date):
-    self.name = name
+  def __init__(self, email, ocupacion_actual, sueldo_actual, area_actual):
+    self.email = email
+    self.ocupacion_actual = ocupacion_actual
+    self.sueldo_actual = sueldo_actual
+    self.area_actual = area_actual
+    self.pub_date = datetime.now()
 
   def __repr__(self):
     return self.email
