@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% block head %}
+  <title>::Trabajo Macanudo::</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta charset=utf-8>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <style>
+    body {
+      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+  </style>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}">
+  {% endblock %}
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="{{ url_for('main.home') }}">Trabajo Macanudo</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="#">Ofrecidos</a></li>
+            <li><a href="#">Buscados</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    {% block body %}{% endblock %}
+
+    <hr>
+
+    <footer>
+      <p>&copy; Banquito 2012</p>
+    </footer>
+  </div> <!-- /container -->
+</body>
+</html>
