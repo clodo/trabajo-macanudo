@@ -1,3 +1,4 @@
-from frontend import app
+from frontend import create_app
 
+app = create_app()
 app.run()

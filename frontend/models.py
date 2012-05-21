@@ -1,4 +1,4 @@
-from frontend import db
+from frontend.extensions import db
 from datetime import datetime
 
 class Postulacion(db.Model):
