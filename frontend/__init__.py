@@ -1,12 +1,15 @@
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
+from flaskext.babel import Babel
 
 app = Flask(__name__)
 app.config.from_object('config')
 
+# Extensiones
 db = SQLAlchemy(app)
-#db.create_all()
+# babel = Babel(app)
 
+# Blueprints
 from frontend.views import main
 app.register_blueprint(main.mod)
 
