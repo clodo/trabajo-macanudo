@@ -1,19 +1,21 @@
 Trabajo macanudo
 ================
 
-Instalación
------------
-### Clonar repo
-git clone https://github.com/clodo/trabajo-macanudo.git PATH/TO/YOUR/APP
+Hola Nico Bases
 
-### Instalar dependencias
-pip install -r requirements.txt
+##Instalación
 
-### Crear base de datos
-python manage.py reset
+###Clonar repo
+    git clone https://github.com/clodo/trabajo-macanudo.git PATH/TO/YOUR/APP
 
-### Ejecutar
-python manage.py run
+###Instalar dependencias
+    pip install -r requirements.txt
 
-### Ejecutar tests
-nosetests
+###Crear base de datos
+    python manage.py reset
+
+###Ejecutar
+    python manage.py run
+
+###Ejecutar tests
+    nosetests
