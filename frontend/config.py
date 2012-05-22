@@ -14,4 +14,4 @@ class DefaultConfig(BaseConfig):
 
 class TestConfig(BaseConfig):
   TESTING = True
-  SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'tests/db/db.sqlite')
+  SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/db/test.sqlite' % os.path.dirname(__file__)
