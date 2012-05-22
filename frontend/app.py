@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 from flask import Flask, render_template
 from frontend.config import DefaultConfig, APP_NAME
 from frontend.views import main
 from frontend.extensions import db
+from frontend import utils
 
 __all__ = ['create_app']
 
@@ -15,6 +18,7 @@ def create_app(config=None, app_name=None):
   
   configure_app(app, config)
   configure_extensions(app)
+  configure_template_filters(app)
   configure_error_handlers(app)
 
   app.register_blueprint(main.mod)
@@ -29,6 +33,11 @@ def configure_app(app, config):
 def configure_extensions(app):
   # sqlalchemy
   db.init_app(app)
+
+def configure_template_filters(app):
+  @app.template_filter()
+  def timesince(value):
+    return utils.timesince(value)
 
 def configure_error_handlers(app):
   @app.errorhandler(404)

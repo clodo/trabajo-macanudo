@@ -6,7 +6,7 @@
       {% for postulacion in postulaciones %}
         <td>{{ postulacion|safe }}</td>
         <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
-        <td><i>{{ postulacion.get_pub_date() }}</i></td>
+        <td><i>{{ postulacion.get_pub_date()|timesince|safe }}</i></td>
       {% endfor %}
     </tbody>
   </table>

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Blueprint, render_template, flash, redirect, url_for
 from frontend.models import Postulacion
 from frontend.forms import PostulacionForm
