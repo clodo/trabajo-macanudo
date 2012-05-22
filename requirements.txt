@@ -2,6 +2,7 @@ Babel==0.9.6
 Flask==0.8
 Flask-SQLAlchemy==0.16
 Flask-Script==0.3.3
+Flask-Testing==0.3
 Flask-WTF==0.6
 Jinja2==2.6
 SQLAlchemy==0.7.7
@@ -9,6 +10,9 @@ WTForms==1.0.1
 Werkzeug==0.8.3
 argparse==1.2.1
 ipython==0.12.1
+nose==1.1.2
 pytz==2012c
+simplejson==2.5.2
 speaklater==1.2
+twill==0.9
 wsgiref==0.1.2
