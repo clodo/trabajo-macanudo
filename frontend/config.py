@@ -7,6 +7,7 @@ class BaseConfig(object):
   DEBUG = False
   TESTING = False
   SECRET_KEY = 'nestor ancel'
+  CSRF_ENABLED = True
   
 class DefaultConfig(BaseConfig):
   DEBUG = True
