@@ -9,7 +9,6 @@ SQLAlchemy==0.7.7
 WTForms==1.0.1
 Werkzeug==0.8.3
 argparse==1.2.1
-ipython==0.12.1
 nose==1.1.2
 pytz==2012c
 simplejson==2.5.2
