@@ -11,7 +11,7 @@ Werkzeug==0.8.3
 argparse==1.2.1
 ipython==0.12.1
 nose==1.1.2
-psycopg2==2.4.5
+#psycopg2==2.4.5
 pytz==2012c
 simplejson==2.5.2
 speaklater==1.2
