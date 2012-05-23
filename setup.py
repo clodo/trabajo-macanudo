@@ -19,6 +19,6 @@ setup(
     'Flask-Babel',
     'Flask-Testing',
     'nose',
-    #'psycopg2',
+    'psycopg2',
   ]
 )
