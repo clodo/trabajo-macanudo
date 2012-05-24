@@ -25,12 +25,14 @@
 
     <form class="form-inline" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
-      <p>Soy {{ render_input(form.ocupacion_actual, 'Desarrollador Web', 'span2') }}, y actualmente gano
-        {{ render_input(form.sueldo_actual, '8000', 'span1') }} pesos por mes en
-        {{ render_input(form.area_actual, 'Capital Federal', 'span2') }}.
+      <p>
+        Quiero trabajar {{ render_input(form.carga_horaria_pretendida, 'uno', 'span2') }}
+        como {{ render_input(form.ocupacion_pretendida, 'Analista programador universitario', 'span3')}}
+        en la zona de {{ render_input(form.lugar_pretendido, 'Parque Patricios', 'input-medium')}}
+        y ganar {{ render_input(form.sueldo_pretendido, '12000', 'input-mini')}} pesos por mes.
       </p>
       <p>
-        Mandame las propuestas acá: {{ render_input(form.email, 'busco@labugo.com.ar', 'span3') }}
+        Mandame las propuestas acá: {{ render_input(form.email, 'busco@laburo.co.pa.do', 'span3') }}
       </p>
       <button type="submit" class="btn btn-primary">Postularme!</button>
     </form>

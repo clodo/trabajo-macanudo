@@ -11,11 +11,14 @@ mod = Blueprint('main', __name__)
 def home():
   form = PostulacionForm()
   if form.validate_on_submit():
-    postulacion = Postulacion(request.form['email'], request.form['ocupacion_actual'], request.form['sueldo_actual'], request.form['area_actual'])
+    postulacion = Postulacion()
+    form.populate_obj(postulacion)
+
     db.session.add(postulacion)
     db.session.commit()
 
     flash("Success")
+
     return redirect(url_for('main.home'))
   
   return render_template('main/home.html', form=form)
