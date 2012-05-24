@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 
+{% from "macros/_utils.html" import render_pagination %}
+
 {% block body %}
   <table class="table table-striped">
     <tbody>
-      {% for postulacion in postulaciones %}
+      {% for postulacion in postulaciones.items %}
       <tr>
         <td>{{ postulacion|safe }}</td>
         <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
@@ -12,4 +14,6 @@
       {% endfor %}
     </tbody>
   </table>
+  
+  {{ render_pagination(postulaciones, 'main.ofrecidos')}}
 {% endblock %}

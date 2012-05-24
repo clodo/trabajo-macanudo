@@ -23,7 +23,8 @@ def home():
   
   return render_template('main/home.html', form=form)
 
-@mod.route('/ofrecidos')
-def ofrecidos():
-  postulaciones = Postulacion.query.order_by(Postulacion.pub_date.desc())
+@mod.route("/ofrecidos")
+@mod.route("/ofrecidos/<int:page>/")
+def ofrecidos(page=1):
+  postulaciones = Postulacion.query.order_by(Postulacion.pub_date.desc()).paginate(page, 20)
   return render_template('main/ofrecidos.html', postulaciones=postulaciones)

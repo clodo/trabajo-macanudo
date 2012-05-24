@@ -10,7 +10,7 @@ class Postulacion(db.Model):
   #ocupacion_actual = db.Column(db.String(120))
   #sueldo_actual = db.Column(db.Integer)
   #area_actual = db.Column(db.String(120))
-  carga_horaria_pretendida = db.Column(db.Integer, default=FULL_TIME)
+  tipo_pretendido = db.Column(db.Integer, default=FULL_TIME)
   ocupacion_pretendida = db.Column(db.String(120))
   sueldo_pretendido = db.Column(db.Integer)
   lugar_pretendido = db.Column(db.String(120))
@@ -19,8 +19,12 @@ class Postulacion(db.Model):
   def __init__(self, *args, **kwargs):
     super(Postulacion, self).__init__(*args, **kwargs)
 
+  def __repr__(self):
+    return 'Quiero trabajar <b>{tipo}</b> como <b>{como}</b> en la zona de <b>{donde}</b> y ganar <b>{cuanto}</b> pesos por mes.'.format(como=self.ocupacion_pretendida, cuanto=self.sueldo_pretendido, donde=self.lugar_pretendido, tipo=self.get_tipo())
+
   def get_pub_date(self):
     return self.pub_date
 
-  def __repr__(self):
-    return 'Quiero trabajar de <b>{que}</b> de forma <b>{como}</b> en la zona de <b>{donde}</b> y quiero ganar <b>{cuanto}<b>.'.format(que=self.ocupacion_pretendida, cuanto=self.sueldo_pretendido, donde=self.lugar_pretendido, como=self.carga_horaria_pretendida)
+  def get_tipo(self):
+    return 'Full-time' if self.tipo_pretendido == self.FULL_TIME else 'Part-time'
+  
