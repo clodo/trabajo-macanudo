@@ -3,7 +3,7 @@
 from datetime import datetime
 
 def timesince(dt, default="hace un toque"):
-  now = datetime.utcnow()
+  now = datetime.now()
   diff = now - dt
     
   periods = (

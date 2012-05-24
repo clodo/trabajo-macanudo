@@ -4,9 +4,11 @@
   <table class="table table-striped">
     <tbody>
       {% for postulacion in postulaciones %}
+      <tr>
         <td>{{ postulacion|safe }}</td>
         <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
         <td><i>{{ postulacion.get_pub_date()|timesince|safe }}</i></td>
+      </tr>
       {% endfor %}
     </tbody>
   </table>
