@@ -11,3 +11,4 @@ class PostulacionForm(Form):
   ocupacion_pretendida = TextField('Ocupación pretendida', validators=[Required()])
   sueldo_pretendido = IntegerField('Sueldo pretendido', validators=[Required()])
   lugar_pretendido = TextField('Lugar pretendido', validators=[Required()])
+  capacidades = TextField('Tags')

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Blueprint, render_template, flash, redirect, url_for, request
-from frontend.models import Postulacion
+from frontend.models import Postulacion, Tag
 from frontend.forms import PostulacionForm
 from frontend.extensions import db
 
@@ -13,6 +13,11 @@ def home():
   if form.validate_on_submit():
     postulacion = Postulacion()
     form.populate_obj(postulacion)
+
+    for tag in form.capacidades.data.split(','):
+      tag_name = tag.strip()
+      t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
+      postulacion.tags.append(t)
 
     db.session.add(postulacion)
     db.session.commit()
