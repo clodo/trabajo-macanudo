@@ -10,7 +10,7 @@ mod = Blueprint('ajax', __name__, url_prefix='/ajax')
 def tags():
   term = request.args.get('term', '')
 
-  if term == '':
+  if len(term) <= 0:
     return '[]'
 
   tags = Tag.query.filter(Tag.name.like(term+'%')).all()

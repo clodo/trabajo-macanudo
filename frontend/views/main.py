@@ -14,9 +14,9 @@ def home():
     postulacion = Postulacion()
     form.populate_obj(postulacion)
 
-    for tag in form.capacidades.data.split(','):
+    for tag in form.habilidades.data.split(','):
       tag_name = tag.strip()
-      if tag_name != '':
+      if len(tag_name) > 0:
         t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
         postulacion.tags.append(t)
 
