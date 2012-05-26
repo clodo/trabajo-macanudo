@@ -14,6 +14,7 @@ $(function(){
       }
     })
     .autocomplete({
+      autoFocus: true,
       source: function(request, response) {
         $.getJSON("/ajax/tags", {
           term: extractLast(request.term)
