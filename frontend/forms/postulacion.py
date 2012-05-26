@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flaskext.wtf import Form, TextField, IntegerField, SelectField, Required, Email
+from flaskext.wtf import Form, TextField, IntegerField, SelectField, Required, Email, RecaptchaField
 
 class PostulacionForm(Form):
   email = TextField('Email', validators=[Required(), Email()])
@@ -12,3 +12,4 @@ class PostulacionForm(Form):
   sueldo_pretendido = IntegerField('Sueldo pretendido', validators=[Required()])
   lugar_pretendido = TextField('Lugar pretendido', validators=[Required()])
   habilidades = TextField('Tags')
+  recaptcha = RecaptchaField()

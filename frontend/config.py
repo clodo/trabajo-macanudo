@@ -8,6 +8,10 @@ class BaseConfig(object):
   TESTING = False
   SECRET_KEY = 'nestor ancel'
   CSRF_ENABLED = True
+  RECAPTCHA_USE_SSL = True
+  RECAPTCHA_PUBLIC_KEY = '6LcK79ESAAAAAKosCIouR-X-9FBawGYE1rEr02FO'
+  RECAPTCHA_PRIVATE_KEY = '6LcK79ESAAAAAKy-jWiShHL0lbmSoEWMixfISNmV'
+  RECAPTCHA_OPTIONS = {'theme': 'clean', 'lang': 'es'}
   
 class DefaultConfig(BaseConfig):
   DEBUG = True

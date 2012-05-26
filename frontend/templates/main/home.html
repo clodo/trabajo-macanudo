@@ -39,6 +39,9 @@
       <p>
         Mandame las propuestas acá: {{ render_input(form.email, 'busco@laburo.co.pa.do', 'span3') }}
       </p>
+      <p>
+        {{ form.recaptcha()|safe }}
+      </p>
       <button type="submit" class="btn btn-primary">Postularme!</button>
     </form>
   </div>
