@@ -9,8 +9,8 @@ class BaseConfig(object):
   SECRET_KEY = 'nestor ancel'
   CSRF_ENABLED = True
   RECAPTCHA_USE_SSL = True
-  RECAPTCHA_PUBLIC_KEY = '6LcK79ESAAAAAKosCIouR-X-9FBawGYE1rEr02FO'
-  RECAPTCHA_PRIVATE_KEY = '6LcK79ESAAAAAKy-jWiShHL0lbmSoEWMixfISNmV'
+  RECAPTCHA_PUBLIC_KEY = '6Lco79ESAAAAAPKyci6r9mVxKzXu9QbSICcRWRnE'
+  RECAPTCHA_PRIVATE_KEY = '6Lco79ESAAAAAE6_QrNDFzb9S2J979gk5fDsgDWj'
   RECAPTCHA_OPTIONS = {'theme': 'clean', 'lang': 'es'}
   
 class DefaultConfig(BaseConfig):
