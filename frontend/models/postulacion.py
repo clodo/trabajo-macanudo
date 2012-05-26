@@ -27,7 +27,7 @@ class Postulacion(db.Model):
     super(Postulacion, self).__init__(*args, **kwargs)
 
   def __repr__(self):
-    return 'Quiero trabajar <b>{tipo}</b> como <b>{como}</b> en la zona de <b>{donde}</b> y ganar <b>{cuanto}</b> pesos por mes.'.format(como=self.ocupacion_pretendida, cuanto=self.sueldo_pretendido, donde=self.lugar_pretendido, tipo=self.get_tipo())
+    return email
 
   def get_pub_date(self):
     return self.pub_date

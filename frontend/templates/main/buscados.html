@@ -1,13 +1,22 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_pagination %}
+{% from "macros/_utils.html" import render_pagination, render_postulacion %}
 
 {% block body %}
+  <form class="well form-inline">
+    <label>Area</label>
+    <input type="text" class="span3" placeholder="Capital Federal" />
+    <label>Tags</label>
+    <input type="text" class="span3" placeholder="php, python, mysql" />
+
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+  </form>
+
   <table class="table table-striped">
     <tbody>
       {% for postulacion in postulaciones.items %}
       <tr>
-        <td>{{ postulacion|safe }}</td>
+        <td>{{ render_postulacion(postulacion) }}</td>
         <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
         <td><i>{{ postulacion.get_pub_date()|timesince|safe }}</i></td>
       </tr>

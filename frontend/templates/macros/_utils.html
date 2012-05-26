@@ -21,3 +21,8 @@
     {{ field(placeholder=placeholder, class_=class) }}
   {% endif %}
 {% endmacro %}
+
+{% macro render_postulacion(postulacion) %}
+  Quiero trabajar <b>{{ postulacion.get_tipo() }}</b> como <b>{{ postulacion.ocupacion_pretendida }}</b> en la zona de <b>{{ postulacion.lugar_pretendido }}</b> y ganar <b>{{ postulacion.sueldo_pretendido }}</b> pesos por mes. 
+  {% for tag in postulacion.tags: %}<span class="label label-important">{{ tag }}</span> {% endfor %}
+{% endmacro %}
