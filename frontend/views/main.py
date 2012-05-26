@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Blueprint, render_template, flash, redirect, url_for, request
+from flask import Blueprint, render_template, flash, redirect, url_for
 from frontend.models import Postulacion, Tag
 from frontend.forms import PostulacionForm
 from frontend.extensions import db
@@ -16,8 +16,9 @@ def home():
 
     for tag in form.capacidades.data.split(','):
       tag_name = tag.strip()
-      t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
-      postulacion.tags.append(t)
+      if tag_name != '':
+        t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
+        postulacion.tags.append(t)
 
     db.session.add(postulacion)
     db.session.commit()
@@ -29,7 +30,7 @@ def home():
   return render_template('main/home.html', form=form)
 
 @mod.route("/buscados")
-@mod.route("/buscados/<int:page>/")
+@mod.route("/buscados/<int:page>")
 def buscados(page=1):
   postulaciones = Postulacion.query.order_by(Postulacion.pub_date.desc()).paginate(page, 20)
   return render_template('main/buscados.html', postulaciones=postulaciones)

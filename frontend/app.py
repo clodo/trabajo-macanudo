@@ -4,7 +4,7 @@ import os
 
 from flask import Flask, render_template
 from frontend.config import DefaultConfig, APP_NAME
-from frontend.views import main
+from frontend.views import main, ajax
 from frontend.extensions import db
 from frontend import utils
 
@@ -22,6 +22,7 @@ def create_app(config=None, app_name=None):
   configure_error_handlers(app)
 
   app.register_blueprint(main.mod)
+  app.register_blueprint(ajax.mod)
   
   return app
 
