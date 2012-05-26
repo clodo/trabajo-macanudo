@@ -11,9 +11,11 @@ Werkzeug==0.8.3
 argparse==1.2.1
 ipython==0.12.1
 nose==1.1.2
-#psycopg2==2.4.5
+python-termstyle==0.1.10
 pytz==2012c
+rednose==0.3.2
 simplejson==2.5.2
 speaklater==1.2
 twill==0.9
 wsgiref==0.1.2
+#psycopg2==2.4.5

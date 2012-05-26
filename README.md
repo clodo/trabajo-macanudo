@@ -18,4 +18,4 @@ Hola Nico Bases
     python manage.py run
 
 ###Ejecutar tests
-    nosetests
+    nosetests --rednose
