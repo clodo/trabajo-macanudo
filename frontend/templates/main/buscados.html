@@ -1,26 +1,27 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_pagination, render_postulacion %}
+{% from "macros/_utils.html" import render_pagination, render_empleo %}
 
 {% block body %}
   <form class="well form-search">
-    <input type="text" class="input-medium search-query" placeholder="Capital Federal" />
-    <input type="text" class="input-medium search-query" placeholder="php, python, mysql" />
+    <input type="text" class="span3 search-query" placeholder="Desarrollador Web Sr." />
+    <input type="text" class="span3 search-query" placeholder="php, python, mysql" />
+    <input type="text" class="span3 search-query" placeholder="Capital Federal" />
 
     <button type="submit" class="btn btn-primary">Buscar</button>
   </form>
 
   <table class="table table-striped">
     <tbody>
-      {% for postulacion in postulaciones.items %}
+      {% for empleo in empleos.items %}
       <tr>
-        <td>{{ render_postulacion(postulacion) }}</td>
+        <td>{{ render_empleo(empleo) }}</td>
         <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
-        <td><i>{{ postulacion.get_pub_date()|timesince|safe }}</i></td>
+        <td><i>{{ empleo.get_pub_date()|timesince|safe }}</i></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
   
-  {{ render_pagination(postulaciones, 'main.buscados')}}
+  {{ render_pagination(empleos, 'main.buscados')}}
 {% endblock %}

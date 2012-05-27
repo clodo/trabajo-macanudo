@@ -22,7 +22,7 @@
   {% endif %}
 {% endmacro %}
 
-{% macro render_postulacion(postulacion) %}
-  Quiero trabajar <b>{{ postulacion.get_jornada() }}</b> como <b>{{ postulacion.ocupacion }}</b> en la zona de <b>{{ postulacion.lugar }}</b> y ganar <b>{{ postulacion.sueldo }}</b> pesos por mes. 
-  {% for tag in postulacion.tags: %}<span class="label label-important">{{ tag }}</span> {% endfor %}
+{% macro render_empleo(empleo) %}
+  Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes. 
+  {% for tag in empleo.tags: %}<span class="label label-important">{{ tag }}</span> {% endfor %}
 {% endmacro %}

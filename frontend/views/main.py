@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
 
 from flask import Blueprint, render_template, flash, redirect, url_for
-from frontend.models import Postulacion, Tag
-from frontend.forms import PostulacionForm
+from frontend.models import Empleo, Tag
+from frontend.forms import EmpleoForm
 from frontend.extensions import db
 
 mod = Blueprint('main', __name__)
 
 @mod.route('/', methods=("GET", "POST"))
 def home():
-  form = PostulacionForm()
+  form = EmpleoForm()
   if form.validate_on_submit():
-    postulacion = Postulacion()
-    form.populate_obj(postulacion)
+    empleo = Empleo()
+    form.populate_obj(empleo)
 
     for tag_name in set([tag.strip() for tag in form.habilidades.data.split(",") if tag.strip()]):
       t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
-      postulacion.tags.append(t)
+      empleo.tags.append(t)
 
-    db.session.add(postulacion)
+    db.session.add(empleo)
     db.session.commit()
 
     flash("Success")
@@ -30,8 +30,8 @@ def home():
 @mod.route("/buscados")
 @mod.route("/buscados/<int:page>")
 def buscados(page=1):
-  postulaciones = Postulacion.query.order_by(Postulacion.pub_date.desc()).paginate(page, 20)
-  return render_template('main/buscados.html', postulaciones=postulaciones)
+  empleos = Empleo.query.order_by(Empleo.pub_date.desc()).paginate(page, 20)
+  return render_template('main/buscados.html', empleos=empleos)
 
 @mod.route("/ofrecidos")
 def ofrecidos():

@@ -1,1 +1,1 @@
-from frontend.forms.postulacion import PostulacionForm
+from frontend.forms.empleo import EmpleoForm

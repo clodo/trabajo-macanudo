@@ -1,1 +1,1 @@
-from frontend.models.postulacion import Postulacion, Tag
+from frontend.models.empleo import Empleo, Tag
