@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, request
 from frontend.models import Empleo, Tag
 from frontend.forms import EmpleoForm
 from frontend.extensions import db
@@ -30,7 +30,12 @@ def home():
 @mod.route("/buscados")
 @mod.route("/buscados/<int:page>")
 def buscados(page=1):
+  tags = request.args.get('tags') or ''
+  tags = set([tag.strip() for tag in tags.split(",") if tag.strip()])
+
   empleos = Empleo.query.order_by(Empleo.pub_date.desc()).paginate(page, 20)
+
+  #empleos = Empleo.query.join(Empleo.tags).filter(Tag.name.in_(tags)).order_by(Empleo.pub_date.desc()).paginate(page, 20)
   return render_template('main/buscados.html', empleos=empleos)
 
 @mod.route("/ofrecidos")
