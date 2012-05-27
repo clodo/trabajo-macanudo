@@ -9,16 +9,13 @@ tags = db.Table('tags',
 class Postulacion(db.Model):
   FULL_TIME = 100
   PART_TIME = 200
-  
+
   id = db.Column(db.Integer, primary_key=True)
   email = db.Column(db.String(80))
-  #ocupacion_actual = db.Column(db.String(120))
-  #sueldo_actual = db.Column(db.Integer)
-  #area_actual = db.Column(db.String(120))
-  tipo_pretendido = db.Column(db.Integer, default=FULL_TIME)
-  ocupacion_pretendida = db.Column(db.String(120))
-  sueldo_pretendido = db.Column(db.Integer)
-  lugar_pretendido = db.Column(db.String(120))
+  jornada = db.Column(db.Integer)
+  ocupacion = db.Column(db.String(120))
+  sueldo = db.Column(db.Integer)
+  lugar = db.Column(db.String(120))
   pub_date = db.Column(db.DateTime(), default=datetime.utcnow)
 
   tags = db.relationship('Tag', secondary=tags, backref=db.backref('postulaciones', lazy='dynamic'))
@@ -32,8 +29,8 @@ class Postulacion(db.Model):
   def get_pub_date(self):
     return self.pub_date
 
-  def get_tipo(self):
-    return 'Full-time' if self.tipo_pretendido == self.FULL_TIME else 'Part-time'
+  def get_jornada(self):
+    return 'Full-time' if self.jornada == self.FULL_TIME else 'Part-time'
 
 class Tag(db.Model):
   id = db.Column(db.Integer, primary_key=True)

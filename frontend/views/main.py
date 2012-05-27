@@ -14,11 +14,9 @@ def home():
     postulacion = Postulacion()
     form.populate_obj(postulacion)
 
-    for tag in form.habilidades.data.split(','):
-      tag_name = tag.strip()
-      if len(tag_name) > 0:
-        t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
-        postulacion.tags.append(t)
+    for tag_name in set([tag.strip() for tag in form.habilidades.data.split(",") if tag.strip()]):
+      t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
+      postulacion.tags.append(t)
 
     db.session.add(postulacion)
     db.session.commit()

@@ -28,10 +28,10 @@
     <form class="form-inline" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
       <p>
-        Quiero trabajar {{ render_input(form.tipo_pretendido, 'uno', 'span2') }}
-        como {{ render_input(form.ocupacion_pretendida, 'Analista programador universitario', 'span3')}}
-        en la zona de {{ render_input(form.lugar_pretendido, 'Parque Patricios', 'input-medium')}}
-        y ganar {{ render_input(form.sueldo_pretendido, '12000', 'input-mini')}} pesos por mes.
+        Quiero trabajar {{ render_input(form.jornada, 'uno', 'span2') }}
+        como {{ render_input(form.ocupacion, 'Analista programador universitario', 'span3')}}
+        en la zona de {{ render_input(form.lugar, 'Parque Patricios', 'input-medium')}}
+        y ganar {{ render_input(form.sueldo, '12000', 'input-mini')}} pesos por mes.
       </p>
       <p>
         Soy un capo en {{ render_input(form.habilidades, 'python, ruby, mysql', 'span3 autocomplete') }}
