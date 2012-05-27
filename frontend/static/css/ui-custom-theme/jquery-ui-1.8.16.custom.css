@@ -1047,7 +1047,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 
 
 
-/*** Input field styling from Bootstrap **/
+/*** Input field styling from Bootstrap 
  input, textarea {
   -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
   -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
@@ -1087,7 +1087,7 @@ textarea,
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-
+**/
 
 
 /**Toolbar**/

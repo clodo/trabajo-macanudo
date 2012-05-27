@@ -15,4 +15,5 @@ def tags():
 
   tags = Tag.query.filter(Tag.name.like(term+'%')).all()
 
-  return '[' + ",".join('"'+tag.name+'"' for tag in tags) + ']'
+  #return '[' + ",".join('"'+tag.name+'"' for tag in tags) + ']'
+  return jsonify(tags=[tag.name for tag in tags])

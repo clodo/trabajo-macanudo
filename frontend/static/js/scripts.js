@@ -7,7 +7,6 @@ function extractLast(term) {
 
 $(function(){
   $(".autocomplete")
-    // don't navigate away from the field on tab when selecting an item
     .bind("keydown", function(event) {
       if (event.keyCode === $.ui.keyCode.TAB && $(this).data("autocomplete").menu.active) {
         event.preventDefault();
@@ -18,7 +17,9 @@ $(function(){
       source: function(request, response) {
         $.getJSON("/ajax/tags", {
           term: extractLast(request.term)
-        }, response);
+        }, function (data){
+          response(data.tags)
+        });
       },
       search: function() {
         // custom minLength
