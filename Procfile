@@ -1,1 +1,1 @@
-web: python manage.py run
+web: python manage.py run -c frontend.config.HerokuConfig

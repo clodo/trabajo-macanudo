@@ -4,6 +4,7 @@ from flask import Blueprint, render_template, flash, redirect, url_for, request
 from frontend.models import Empleo, Tag
 from frontend.forms import EmpleoForm
 from frontend.extensions import db
+from frontend.utils import normalizar_tags
 
 mod = Blueprint('main', __name__)
 
@@ -26,9 +27,6 @@ def home():
     return redirect(url_for('main.home'))
   
   return render_template('main/home.html', form=form)
-
-def normalizar_tags(tags='', separador=','):
-  return set([tag.strip() for tag in tags.split(separador) if tag.strip()])
 
 @mod.route("/buscados/")
 @mod.route("/buscados/<int:page>")

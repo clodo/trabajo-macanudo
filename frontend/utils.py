@@ -21,3 +21,6 @@ def timesince(dt, default="hace un toque"):
       return "hace %d %s" % (period, singular if period == 1 else plural)
 
   return default
+
+def normalizar_tags(tags='', separador=','):
+  return set([tag.strip() for tag in tags.split(separador) if tag.strip()])

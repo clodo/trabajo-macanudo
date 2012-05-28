@@ -3,7 +3,7 @@
 import os
 
 from flask import Flask, render_template
-from frontend.config import DefaultConfig, APP_NAME
+from frontend.config import DefaultConfig, HerokuConfig, APP_NAME
 from frontend.views import main, ajax
 from frontend.extensions import db
 from flask_debugtoolbar import DebugToolbarExtension
