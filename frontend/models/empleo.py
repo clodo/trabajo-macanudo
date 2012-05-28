@@ -10,6 +10,8 @@ class Tag(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100), unique=True, nullable=False)
 
+  empleos = db.relationship('Empleo', secondary=tags, backref=db.backref('tags', lazy='joined'))
+
   def __init__(self, name):
     self.name = name
 
@@ -28,7 +30,7 @@ class Empleo(db.Model):
   lugar = db.Column(db.String(120))
   pub_date = db.Column(db.DateTime(), default=datetime.utcnow)
 
-  tags = db.relationship('Tag', secondary=tags, backref=db.backref('empleos', lazy='dynamic'))
+  #tags = db.relationship('Tag', secondary=tags, backref=db.backref('empleos', lazy='joined'))
 
   def __init__(self, *args, **kwargs):
     super(Empleo, self).__init__(*args, **kwargs)

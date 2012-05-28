@@ -14,7 +14,7 @@ def home():
     empleo = Empleo()
     form.populate_obj(empleo)
 
-    for tag_name in set([tag.strip() for tag in form.habilidades.data.split(",") if tag.strip()]):
+    for tag_name in normalizar_tags(form.habilidades.data):
       t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
       empleo.tags.append(t)
 
@@ -27,25 +27,32 @@ def home():
   
   return render_template('main/home.html', form=form)
 
-@mod.route("/buscados")
+def normalizar_tags(tags='', separador=','):
+  return set([tag.strip() for tag in tags.split(separador) if tag.strip()])
+
+@mod.route("/buscados/")
 @mod.route("/buscados/<int:page>")
 def buscados(page=1):
-  tags = request.args.get('tags') or ''
-  tags = set([tag.strip() for tag in tags.split(",") if tag.strip()])
+  filter_tags = normalizar_tags(request.args.get('tags') or '')
+  
+  empleos_query = Empleo.query.order_by(Empleo.pub_date.desc())
+  
+  if len(filter_tags) > 0:
+    empleos_query = empleos_query.join(Empleo.tags).filter(Tag.name.in_(filter_tags))
 
-  empleos = Empleo.query.order_by(Empleo.pub_date.desc()).paginate(page, 20)
+  empleos = empleos_query.paginate(page, 20)
 
   #empleos = Empleo.query.join(Empleo.tags).filter(Tag.name.in_(tags)).order_by(Empleo.pub_date.desc()).paginate(page, 20)
   return render_template('main/buscados.html', empleos=empleos)
 
-@mod.route("/ofrecidos")
+@mod.route("/ofrecidos/")
 def ofrecidos():
   return render_template('main/ofrecidos.html')
 
-@mod.route("/contacto")
+@mod.route("/contacto/")
 def contacto():
   return render_template('main/contacto.html')
 
-@mod.route("/acerca-de")
+@mod.route("/acerca-de/")
 def acercade():
   return render_template('main/acercade.html')

@@ -6,6 +6,8 @@ from flask import Flask, render_template
 from frontend.config import DefaultConfig, APP_NAME
 from frontend.views import main, ajax
 from frontend.extensions import db
+from flask_debugtoolbar import DebugToolbarExtension
+
 from frontend import utils
 
 __all__ = ['create_app']
@@ -32,8 +34,11 @@ def configure_app(app, config):
     app.config.from_object(config)
 
 def configure_extensions(app):
-  # sqlalchemy
+  # SQLalchemy
   db.init_app(app)
+
+  # Debug Toolbar
+  toolbar = DebugToolbarExtension(app)
 
 def configure_template_filters(app):
   @app.template_filter()

@@ -12,6 +12,8 @@ class BaseConfig(object):
   RECAPTCHA_PUBLIC_KEY = '6Lco79ESAAAAAPKyci6r9mVxKzXu9QbSICcRWRnE'
   RECAPTCHA_PRIVATE_KEY = '6Lco79ESAAAAAE6_QrNDFzb9S2J979gk5fDsgDWj'
   RECAPTCHA_OPTIONS = {'theme': 'clean', 'lang': 'es'}
+  DEBUG_TB_PROFILER_ENABLED = True
+  DEBUG_TB_INTERCEPT_REDIRECTS = False
   
 class DefaultConfig(BaseConfig):
   DEBUG = True

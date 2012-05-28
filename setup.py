@@ -18,6 +18,7 @@ setup(
     'Flask-Script',
     'Flask-Babel',
     'Flask-Testing',
+    'Flask-DebugToolbar',
     'nose',
     'factory-boy',
     'psycopg2',
