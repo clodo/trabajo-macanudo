@@ -9,6 +9,7 @@ Hola Nico Bases
     git clone https://github.com/clodo/trabajo-macanudo.git PATH/TO/YOUR/APP
 
 ###Instalar dependencias
+    sudo apt-get install python-profiler (para que funcione la debugToolbar)
     pip install -r requirements.txt
 
 ###Crear base de datos
