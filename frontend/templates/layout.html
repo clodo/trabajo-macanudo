@@ -11,62 +11,64 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/text.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/960.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.cerulean.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-custom-theme/jquery-ui-1.8.16.custom.css') }}">
   <script src="{{ url_for('static', filename='js/libs/modernizr-2.5.3.min.js') }}"></script>
+
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .input_error{
+      color: #BD4247;
+      border-color: #BD4247;
+    }
+  </style>
 </head>
 <body>
-
-  <header>
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container_12">
-        <a class="logo" href="{{ url_for('main.home') }}">Trabajo Macanudo</a>
-        <ul class="nav">
-          <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li>
-          <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
-          <li><a href="{{ url_for('main.acercade') }}">Acerca de</a></li>
-          <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
-          <li><a class="feedback" href="#">Feedback</a></li>
-        </ul>
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="{{ url_for('main.home') }}">Trabajo Macanudo</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li>
+            <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
+            <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li>
+            <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    </div>
-  </header>
-
-  <div id="main" class="main-container">
-    <div class="container_12">
-      {% block body %}{% endblock %}
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="container_12">
-        <ul class="nav">
-          <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li>
-          <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
-          <li><a href="{{ url_for('main.acercade') }}">Acerca de</a></li>
-          <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
-          <li><a class="feedback" href="#">Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <div class="container">
+    {% block body %}{% endblock %}
+
+    <hr>
+
+    <footer>
+      <p>&copy; <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a> 2012</p>
+    </footer>
+  </div> <!-- /container -->
 
   <a href="http://github.com/clodo/trabajo-macanudo">
-    <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 2000"
+    <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 2000"
     src="{{ url_for('static', filename='img/github_ribbon.png') }}" alt="Fork me on GitHub">
   </a>
 
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/libs/jquery-1.7.1.min.js') }}"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  <!-- end scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-1.7.2.min.js') }}">\x3C/script>')</script>
+  <script src="{{ url_for('static', filename='js/jquery-ui-1.8.16.custom.min.js') }}"></script>
+  <!-- script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script -->
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
   <script>
     var _gaq=[['_setAccount','UA-32116354-1'],['_trackPageview']];
