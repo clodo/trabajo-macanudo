@@ -11,20 +11,16 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.cerulean.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-custom-theme/jquery-ui-1.8.16.custom.css') }}">
-  <script src="{{ url_for('static', filename='js/libs/modernizr-2.5.3.min.js') }}"></script>
-
-  <style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <style type="text/css">
     body {
       padding-top: 60px;
       padding-bottom: 40px;
     }
-    .input_error{
-      color: #BD4247;
-      border-color: #BD4247;
-    }
   </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-custom-theme/jquery-ui-1.8.16.custom.css') }}">
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -42,7 +38,7 @@
             <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
             <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li>
             <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a class="feedback" href="#">Feedback!</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -51,21 +47,37 @@
 
   <div class="container">
     {% block body %}{% endblock %}
-
-    <hr>
-
-    <footer>
-      <p>&copy; <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a> 2012</p>
-    </footer>
   </div> <!-- /container -->
 
-  <a href="http://github.com/clodo/trabajo-macanudo">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="pull-left">
+            <p>Copyright © 2012 <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a></p>
+          </div>
+          <div class="pull-right">
+            <ul class="unstyled row-fluid">
+              <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li> |
+              <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li> |
+              <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li> |
+              <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li> |
+              <li><a class="feedback" href="#">Feedback!</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- a href="http://github.com/clodo/trabajo-macanudo">
     <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 2000"
     src="{{ url_for('static', filename='img/github_ribbon.png') }}" alt="Fork me on GitHub">
-  </a>
+  </a -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-1.7.2.min.js') }}">\x3C/script>')</script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/jquery-ui-1.8.16.custom.min.js') }}"></script>
   <!-- script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script -->
   <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>

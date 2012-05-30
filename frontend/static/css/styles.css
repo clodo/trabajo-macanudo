@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  background-image: url(../img/bg-content.jpg);
+  font-family: trebuchet;
+}
+
+p {
+  font-family: trebuchet;
+}
+
+.input_error{
+  color: #BD4247;
+  border-color: #BD4247;
+}
+
+.navbar-inner {
+  min-height: 48px;
+  background: url('../img/bg-head.gif') repeat;
+}
+
+.navbar .brand {
+  text-indent: -9999px;
+  width: 170px;
+  height: 28px;
+  background: url('../img/logo.png') no-repeat 20px 0;
+}
+
+.navbar .nav {
+  float: right;
+  margin: 0;
+}
+
+.navbar .nav > li > a {
+  font-size: 8px;
+  padding: 17px 4px 13px;
+  color: #BDBDBD;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 18px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.navbar .nav > li > a.feedback {
+  color: #ff3c00;
+}
+
+.navbar .nav > li > a:hover, .navbar .nav .active > li > a, .navbar .nav .active > li > a:hover {
+  color: #fff;
+}
+
+.footer {
+  background: url(../img/bg-footer.jpg) repeat;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .container {
+  height: 65px;
+  padding-top: 10px;
+  color: #666;
+}
+
+.footer li {
+  display: inline;
+}
+
+.footer a {
+  color: #666;
+}
+
+.footer a:hover {
+  color: #FFF;
+}
