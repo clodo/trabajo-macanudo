@@ -26,14 +26,34 @@
       {% endif %}
     {% endwith %}
 
-    <form class="form-inline" action="{{ url_for('main.home') }}" method="post">
+    <form class="form-inline" id="form-inicio" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
-        Quiero trabajar {{ render_input(form.jornada, 'uno', 'span2') }}
-        como {{ render_input(form.ocupacion, 'Desarrollador Web Sr.', 'span3')}}
-        en la zona de {{ render_input(form.lugar, 'Parque Patricios', 'input-medium')}}
-        y ganar {{ render_input(form.sueldo, '12000', 'input-mini')}} pesos por mes.
-        Soy muy talentoso en {{ render_input(form.habilidades, 'python, ruby, mysql', 'span3 autocomplete') }}
-        Mandame las propuestas acá: {{ render_input(form.email, 'busco@laburo.co.pa.do', 'span3') }}
+      <div>
+        <label>Quiero trabajar</label> 
+        {{ render_input(form.jornada, 'uno', 'span2') }}
+
+        <label>como </label> 
+        {{ render_input(form.ocupacion, 'Desarrollador Web Sr.', 'span3')}}
+      </div>
+
+      <div>	
+        <label>en la zona de </label> 
+        {{ render_input(form.lugar, 'Parque Patricios', 'input-medium')}}
+        <label>y ganar </label> 
+        {{ render_input(form.sueldo, '12000', 'input-mini')}}
+        <label>pesos por mes.</label> 
+      </div>
+
+      <div class="talentos">
+        <label>Soy muy talentoso en </label> 
+        {{ render_input(form.habilidades, 'python, ruby, mysql', 'span3 autocomplete') }}
+      </div>
+
+      <div class="propuestas">
+        <label>Mandame las propuestas acá: </label> 
+        {{ render_input(form.email, 'busco@laburo.co.pa.do', 'span3') }}
+      </div>
+
       <div>
         {{ form.recaptcha()|safe }}
       </div>

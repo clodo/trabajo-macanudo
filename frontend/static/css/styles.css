@@ -1,10 +1,68 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
-
+* {
+	margin: 0;
+   padding: 0;
+   border: none;
+}
+html {
+	height:100%;
+}
 body {
   background-image: url(../img/bg-midd.jpg);
   font-family: trebuchet;
+  height:100%;
 }
+.contenido-externo {
+	height:100%;
+	width:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#main.container {
+	padding: 80px 0 40px 0;
+}
+.footer {
+	bottom:0;
+	height:40px;
+	position:absolute;
+	width:100%;
+}
+form {
+    padding: 50px 10px 0;
+}
+form #jornada {
+    width: 145px;
+}
+form #ocupacion {
+    width: 195px;
+}
+form #lugar {
+    width: 125px;
+}
+form #sueldo {
+    width: 85px;
+}
+form div { overflow: hidden; margin-bottom: 5px;}
+#main.container form .talentos label, #container form .propuestas label  { text-align: right; width: 245px;}
+#main.container form input, #container form select  { background: #efefef;}
 
+#form-inicio { position: relative; height: 300px;}
+#main.container form button.btn-primary {
+	background: url(../img/bt-postularme.png);
+	width: 208px;
+	height: 34px;
+	text-indent: -999em;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	right: 35px;
+	bottom: 62px;
+}
+* html form .button {font-size:0;line-height:0}  /* ie6 */
+
+*+html form .button {font-size:0;line-height:0}  /* ie7 */
 p {
   font-family: trebuchet;
 }
