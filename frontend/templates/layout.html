@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <style type="text/css">
     body {
-      padding-top: 60px;
+      padding-top: 80px;
       /*padding-bottom: 40px;*/
     }
   </style>
@@ -49,22 +49,20 @@
     {% block body %}{% endblock %}
   </div> <!-- /container -->
 
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="pull-left">
-            <p>Copyright © 2012 <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a></p>
-          </div>
-          <div class="pull-right">
-            <ul class="unstyled row-fluid">
-              <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li> |
-              <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li> |
-              <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li> |
-              <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li> |
-              <li><a class="feedback" href="#">Feedback!</a></li>
-            </ul>
-          </div>
+  <div class="footer footer-fixed-bottom">
+    <div class="footer-inner">
+      <div class="container">
+        <div class="pull-left">
+          <p>Copyright © 2012 <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a></p>
+        </div>
+        <div class="pull-right">
+          <ul class="unstyled">
+            <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li> |
+            <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li> |
+            <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li> |
+            <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li> |
+            <li><a class="feedback" href="#">Feedback!</a></li>
+          </ul>
         </div>
       </div>
     </div>

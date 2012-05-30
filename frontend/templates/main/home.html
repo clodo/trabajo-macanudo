@@ -3,10 +3,11 @@
 {% from "macros/_utils.html" import render_input %}
 
 {% block body %}
-  <div class="hero-unit">
-    <h2>Estoy buscando un trabajo macanudo...</h2>
-    <hr />
-
+<div class="row home">
+  <div class="span6 intro">
+    <img src="{{ url_for('static', filename='img/intro.png') }}" />
+  </div>
+  <div class="span6 formulario">
     {% if form.errors %}
     <div class="alert alert-error">
       <button class="close" data-dismiss="alert">×</button>
@@ -27,22 +28,17 @@
 
     <form class="form-inline" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
-      <p>
         Quiero trabajar {{ render_input(form.jornada, 'uno', 'span2') }}
         como {{ render_input(form.ocupacion, 'Desarrollador Web Sr.', 'span3')}}
         en la zona de {{ render_input(form.lugar, 'Parque Patricios', 'input-medium')}}
         y ganar {{ render_input(form.sueldo, '12000', 'input-mini')}} pesos por mes.
-      </p>
-      <p>
         Soy muy talentoso en {{ render_input(form.habilidades, 'python, ruby, mysql', 'span3 autocomplete') }}
-      </p>
-      <p>
         Mandame las propuestas acá: {{ render_input(form.email, 'busco@laburo.co.pa.do', 'span3') }}
-      </p>
-      <p>
+      <div>
         {{ form.recaptcha()|safe }}
-      </p>
+      </div>
       <button type="submit" class="btn btn-primary">Postularme!</button>
     </form>
   </div>
+</div>
 {% endblock %}

@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 body {
-  background-image: url(../img/bg-content.jpg);
+  background-image: url(../img/bg-midd.jpg);
   font-family: trebuchet;
 }
 
@@ -50,15 +50,18 @@ p {
 }
 
 .footer {
+  margin-top: 50px;
   background: url(../img/bg-footer.jpg) repeat;
+  /*
   position: absolute;
   bottom: 0;
   width: 100%;
+  */
 }
 
-.footer .container {
+.footer .footer-inner {
   height: 30px;
-  padding-top: 10px;
+  padding: 10px 20px 0 20px;
   color: #666;
 }
 
@@ -72,4 +75,24 @@ p {
 
 .footer a:hover {
   color: #FFF;
+}
+
+.home {
+
+}
+
+.intro {
+  min-width: 570px;
+}
+
+.formulario {
+  background: url('../img/form-bg.png') no-repeat 0 0;
+  min-width: 570px;
+}
+
+@media (max-width: 767px) {
+  .footer-fixed-bottom {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
 }
