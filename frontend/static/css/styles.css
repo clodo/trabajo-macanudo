@@ -1,55 +1,98 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
-* {
-	margin: 0;
-   padding: 0;
-   border: none;
-}
+
 html {
-	height:100%;
-}
-body {
-  background-image: url(../img/bg-midd.jpg);
-  font-family: trebuchet;
   height:100%;
 }
+
+body {
+  background-image: url(../img/bg-midd.jpg);
+  height:100%;
+}
+
+iframe {display:none;} 
+
 .contenido-externo {
 	height:100%;
 	width:100%;
 }
+
 #wrapper {
 	min-height:100%;
 	position:relative;
 }
+
 #main.container {
 	padding: 80px 0 40px 0;
 }
-.footer {
-	bottom:0;
-	height:40px;
-	position:absolute;
-	width:100%;
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+  color: #434343;
 }
-form {
-    padding: 50px 10px 0;
+/*
+input, .uneditable-input {
+  height: 16px
+}*/
+
+.formulario {
+  background: url('../img/form-bg.png') no-repeat top center;
+  min-width: 600px;
 }
-form #jornada {
+
+form.postulacion {
+  padding: 65px 42px 0 43px;
+  /* position: relative; */
+  height: 240px;
+  text-align: center;
+}
+
+form.postulacion #jornada {
     width: 145px;
 }
-form #ocupacion {
+form.postulacion #ocupacion {
     width: 195px;
 }
-form #lugar {
+form.postulacion #lugar {
     width: 125px;
 }
-form #sueldo {
+form.postulacion #sueldo {
     width: 85px;
 }
-form div { overflow: hidden; margin-bottom: 5px;}
-#main.container form .talentos label, #container form .propuestas label  { text-align: right; width: 245px;}
-#main.container form input, #container form select  { background: #efefef;}
 
-#form-inicio { position: relative; height: 300px;}
-#main.container form button.btn-primary {
+form.postulacion div {
+  overflow: hidden; 
+  margin-bottom: 15px;
+}
+
+form.postulacion .talentos {
+  margin-bottom: 6px;
+  margin-top: 19px;
+}
+
+form.postulacion .propuestas {
+  margin-bottom: 10px;
+}
+
+form.postulacion .talentos label, form.postulacion .propuestas label  { text-align: right; width: 245px;}
+form.postulacion input, form.postulacion select  { background: #efefef;}
+
+form.postulacion button {
+  margin-top: 17px;
+  color: #39474c;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-shadow: none;
+  padding: 7px 45px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+/*
+form.postulacion button.btn-primary {
 	background: url(../img/bt-postularme.png);
 	width: 208px;
 	height: 34px;
@@ -59,13 +102,7 @@ form div { overflow: hidden; margin-bottom: 5px;}
 	position: absolute;
 	right: 35px;
 	bottom: 62px;
-}
-* html form .button {font-size:0;line-height:0}  /* ie6 */
-
-*+html form .button {font-size:0;line-height:0}  /* ie7 */
-p {
-  font-family: trebuchet;
-}
+}*/
 
 .input_error{
   color: #BD4247;
@@ -73,14 +110,12 @@ p {
 }
 
 .navbar-inner {
-  min-height: 48px;
   background: url('../img/bg-head.gif') repeat;
 }
 
 .navbar .brand {
   text-indent: -9999px;
   width: 170px;
-  height: 28px;
   background: url('../img/logo.png') no-repeat 20px 0;
 }
 
@@ -92,9 +127,7 @@ p {
 .navbar .nav > li > a {
   font-size: 8px;
   padding: 17px 4px 13px;
-  color: #BDBDBD;
   text-transform: uppercase;
-  text-decoration: none;
   line-height: 18px;
   font-family: 'Press Start 2P', cursive;
 }
@@ -103,54 +136,19 @@ p {
   color: #ff3c00;
 }
 
-.navbar .nav > li > a:hover, .navbar .nav .active > li > a, .navbar .nav .active > li > a:hover {
-  color: #fff;
-}
-
 .footer {
   margin-top: 50px;
   background: url(../img/bg-footer.jpg) repeat;
-  /*
   position: absolute;
   bottom: 0;
   width: 100%;
-  */
 }
 
 .footer .footer-inner {
   height: 30px;
   padding: 10px 20px 0 20px;
-  color: #666;
 }
 
 .footer li {
   display: inline;
-}
-
-.footer a {
-  color: #666;
-}
-
-.footer a:hover {
-  color: #FFF;
-}
-
-.home {
-
-}
-
-.intro {
-  min-width: 570px;
-}
-
-.formulario {
-  background: url('../img/form-bg.png') no-repeat 0 0;
-  min-width: 570px;
-}
-
-@media (max-width: 767px) {
-  .footer-fixed-bottom {
-    margin-right: -20px;
-    margin-left: -20px;
-  }
 }
