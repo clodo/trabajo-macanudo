@@ -3,27 +3,30 @@
 {% from "macros/_utils.html" import render_input %}
 
 {% block body %}
+
+{% if form.errors %}
+<div class="row">
+  <div class="alert alert-error">
+    <button class="close" data-dismiss="alert">×</button>
+    <strong></strong> Completá todos los campos.
+  </div>
+</div>
+{% endif %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert">×</button>
+        <strong>Enhorabuena!</strong> Gracias por registrarte en "Trabajo Macanudo", muy pronto vas a recibir miles de propuestas.
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
 <div class="row">
   <div class="span2">&nbsp;</div>
   <div class="span8 formulario">
-    {% if form.errors %}
-    <div class="alert alert-error">
-      <button class="close" data-dismiss="alert">×</button>
-      <strong></strong> Completá todos los campos.
-    </div>
-    {% endif %}
-
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-success">
-            <button class="close" data-dismiss="alert">×</button>
-            <strong>Enhorabuena!</strong> Gracias por registrarte en "Trabajo Macanudo", muy pronto vas a recibir miles de propuestas.
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-
     <form class="form-inline postulacion" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
       <div>

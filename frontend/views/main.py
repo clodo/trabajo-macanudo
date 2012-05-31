@@ -25,7 +25,7 @@ def home():
     flash("Success")
 
     return redirect(url_for('main.home'))
-  
+
   return render_template('main/home.html', form=form)
 
 @mod.route("/buscados/")
