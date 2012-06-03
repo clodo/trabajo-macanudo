@@ -129,7 +129,7 @@ form.postulacion button {
 
 .footer {
   margin-top: 50px;
-  background: url(../img/bg-footer.jpg) repeat;
+  background: url('../img/bg-footer.jpg') repeat;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -142,4 +142,57 @@ form.postulacion button {
 
 .footer li {
   display: inline;
+}
+
+.box {
+  background: url('../img/bg-box2.png') no-repeat 0 0;
+  min-width: 300px;
+  height: 229px;
+  /*
+  width: 361px;
+  margin: 0 5px 10px 5px;
+  */
+}
+
+.box .inner-box {
+  padding: 6px 15px 0 15px;
+}
+
+.box .inner-box h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px white;
+}
+
+.box .inner-box p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.box .inner-box .data {
+  height: 115px;
+}
+
+.box .inner-box button {
+  color: #434343;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 6px 12px;
+  text-shadow: 1px 1px 1px white;
+  margin-left: 25px;
+}
+
+.box .inner-box .tags {
+  margin-top: 18px;
+}
+
+.box .inner-box .label{
+  padding: 2px 10px 4px;
+  font-weight: normal;
+  font-size: 13px;
+  float: left;
+  margin: 0 2px 2px 0;
 }
