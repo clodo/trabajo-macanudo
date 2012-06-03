@@ -38,7 +38,7 @@ def configure_extensions(app):
   db.init_app(app)
 
   # Debug Toolbar
-  #toolbar = DebugToolbarExtension(app)
+  toolbar = DebugToolbarExtension(app)
 
 def configure_template_filters(app):
   @app.template_filter()

@@ -1,0 +1,12 @@
+@import url('http://fonts.googleapis.com/css?family=Press+Start+2P');
+
+@font-face {
+    font-family: 'jrhandRegular';
+    src: url('../fonts/jr!ha___-webfont.eot');
+    src: url('../fonts/jr!ha___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/jr!ha___-webfont.woff') format('woff'),
+         url('../fonts/jr!ha___-webfont.ttf') format('truetype'),
+         url('../fonts/jr!ha___-webfont.svg#jrhandRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

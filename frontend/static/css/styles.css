@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-image: url(../img/bg-midd.jpg);
+  background-image: url('../img/bg-midd.jpg');
   height:100%;
 }
 
@@ -23,12 +23,6 @@ iframe {display:none;}
 	padding: 80px 0 40px 0;
 }
 
-label {
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px white;
-  color: #434343;
-}
 /*
 input, .uneditable-input {
   height: 16px
@@ -37,6 +31,18 @@ input, .uneditable-input {
 .formulario {
   background: url('../img/form-bg.png') no-repeat top center;
   min-width: 600px;
+}
+
+form.postulacion label {
+  font-family: jrhandRegular;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px white;
+  color: #434343;
+}
+
+form.postulacion input, form.postulacion select {
+  font-family: Verdana;
+  font-size: 12px;
 }
 
 form.postulacion {
@@ -88,19 +94,6 @@ form.postulacion button {
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
-
-/*
-form.postulacion button.btn-primary {
-	background: url(../img/bt-postularme.png);
-	width: 208px;
-	height: 34px;
-	text-indent: -999em;
-	overflow: hidden;
-	display: block;
-	position: absolute;
-	right: 35px;
-	bottom: 62px;
-}*/
 
 .input_error{
   color: #BD4247;

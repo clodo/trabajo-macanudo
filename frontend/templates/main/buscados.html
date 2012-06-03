@@ -3,25 +3,31 @@
 {% from "macros/_utils.html" import render_pagination, render_empleo %}
 
 {% block body %}
-  <form class="well form-search" action="{{ url_for('main.buscados') }}" method="GET">
-    <input name="ocupacion" value="{{ request.args.get('ocupacion','') }}" type="text" class="span3 search-query" placeholder="Desarrollador Web Sr." />
-    <input name="tags" value="{{ request.args.get('tags','') }}" type="text" class="span3 search-query autocomplete" placeholder="php, python, mysql" />
-    <input name="lugar" value="{{ request.args.get('lugar','') }}" type="text" class="span3 search-query" placeholder="Capital Federal" />
+  <div class="row">
+    <form class="well form-search" action="{{ url_for('main.buscados') }}" method="GET">
+      <input name="ocupacion" value="{{ request.args.get('ocupacion','') }}" type="text" class="span3 search-query" placeholder="Desarrollador Web Sr." />
+      <input name="tags" value="{{ request.args.get('tags','') }}" type="text" class="span3 search-query autocomplete" placeholder="php, python, mysql" />
+      <input name="lugar" value="{{ request.args.get('lugar','') }}" type="text" class="span3 search-query" placeholder="Capital Federal" />
 
-    <button type="submit" class="btn btn-primary">Buscar</button>
-  </form>
-
-  <table class="table table-striped">
-    <tbody>
-      {% for empleo in empleos.items %}
-      <tr>
-        <td>{{ render_empleo(empleo) }}</td>
-        <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
-        <td><i>{{ empleo.get_pub_date()|timesince|safe }}</i></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+  </div>
   
-  {{ render_pagination(empleos, 'main.buscados')}}
+  <div class="row">
+    <table class="table table-striped">
+      <tbody>
+        {% for empleo in empleos.items %}
+        <tr>
+          <td>{{ render_empleo(empleo) }}</td>
+          <td><button class="btn btn-primary" href="#">Contestar esta postulación</button></td>
+          <td><i>{{ empleo.get_pub_date()|timesince|safe }}</i></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="row">
+    {{ render_pagination(empleos, 'main.buscados')}}
+  </div>
 {% endblock %}
