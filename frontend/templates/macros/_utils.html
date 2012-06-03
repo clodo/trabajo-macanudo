@@ -21,8 +21,3 @@
     {{ field(placeholder=placeholder, class_=class) }}
   {% endif %}
 {% endmacro %}
-
-{% macro render_empleo(empleo) %}
-  Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes. 
-  {% for tag in empleo.tags: %}<span class="label label-important">{{ tag }}</span> {% endfor %}
-{% endmacro %}

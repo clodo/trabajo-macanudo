@@ -4,7 +4,15 @@
 
 {% block body %}
 <div class="row home">
-  <div class="span5">&nbsp;</div>
+  <div class="span5 intro">
+    <div class="intro-inner">
+      <hr />
+      <h3>TRABAJO MACANUDO</h3>
+      <h2>es una forma nueva y ágil de buscar trabajo.</h2>
+      <hr />
+      <p>En tiempos de tanto dinamismo, donde los requerimientos personales y de las empresas van cambiando continuamente, se necesitan formas simples y directas de contactar a las personas con los trabajos que necesitan y a las empresas con los recursos adecuados, para eso, necesitamos eliminar burocracia del proceso, que el primer contacto sea fácil, luego sí, los caminos habituales que cada empresa tiene para seleccionar personal se ponen en marcha.</p>
+    </div>
+  </div>
   <div class="span7 formulario">
     <form class="form-inline postulacion" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}

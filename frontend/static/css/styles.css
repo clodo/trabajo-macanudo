@@ -27,6 +27,42 @@ iframe {display:none;}
   background: url('../img/bg-logo.png') no-repeat 240px 30px;
 }
 
+.intro {
+  
+}
+
+.intro-inner {
+  text-align: right;
+  padding-top: 30px;
+}
+
+.intro-inner hr{
+  margin: 18px 0;
+  border: none;
+  background: url('../img/bg-hr.png') repeat-x;
+  height: 2px;
+}
+
+.intro-inner h3 {
+  font-size: 26px;
+  color: #11A0B5;
+  line-height: 30px;
+  text-shadow: 1px 1px 1px white;
+}
+
+.intro-inner h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px white;
+  line-height: 24px;
+}
+
+.intro-inner p {
+  font-size: 18px;
+  text-shadow: 1px 1px 1px white;
+  line-height: 20px;
+}
+
 .formulario {
   background: url('../img/bg-form.png') no-repeat center top;
 /*  min-width: 600px; */
@@ -113,8 +149,8 @@ form.postulacion button.btn {
 }
 
 .input_error{
-  color: #BD4247;
-  border-color: #BD4247;
+  color: #B94A48!important;
+  border-color: #B94A48!important;
 }
 
 .navbar-inner {
