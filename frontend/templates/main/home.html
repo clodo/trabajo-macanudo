@@ -3,33 +3,12 @@
 {% from "macros/_utils.html" import render_input %}
 
 {% block body %}
-
-{% if form.errors %}
-<div class="row">
-  <div class="alert alert-error">
-    <button class="close" data-dismiss="alert">×</button>
-    <strong></strong> Completá todos los campos.
-  </div>
-</div>
-{% endif %}
-
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-success">
-        <button class="close" data-dismiss="alert">×</button>
-        <strong>Enhorabuena!</strong> Gracias por registrarte en "Trabajo Macanudo", muy pronto vas a recibir miles de propuestas.
-      </div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-
-<div class="row">
+<div class="row home">
   <div class="span5">&nbsp;</div>
   <div class="span7 formulario">
     <form class="form-inline postulacion" action="{{ url_for('main.home') }}" method="post">
       {{ form.hidden_tag() }}
-      <div>
+      <div class="campo">
         <label>Quiero trabajar</label> 
         {{ render_input(form.jornada, 'uno', '') }}
 
@@ -37,7 +16,7 @@
         {{ render_input(form.ocupacion, 'Desarrollador Web Sr.', '')}}
       </div>
 
-      <div>	
+      <div class="campo">	
         <label>en la zona de </label> 
         {{ render_input(form.lugar, 'Parque Patricios', '')}}
         <label> y ganar </label> 
@@ -55,13 +34,31 @@
         {{ render_input(form.email, 'busco@laburo.co.pa.do', '') }}
       </div>
 
-      <!--div>
-        {#
+      <div class="captcha">
         {{ form.recaptcha()|safe }}
-        #}
-      </div -->
-
-      <button type="submit" class="btn btn-primary">Postularme!</button>
+      </div>
+      
+      <div class="submit">
+        {% if form.errors %}
+        <div class="alert alert-error">
+          <button class="close" data-dismiss="alert">×</button>
+          Completá todos los campos!
+        </div>
+        {% endif %}
+        
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-success">
+                <button class="close" data-dismiss="alert">×</button>
+                <strong>Enhorabuena!</strong> Gracias por registrarte en "Trabajo Macanudo", muy pronto vas a recibir miles de propuestas.
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        
+        <button type="submit" class="btn btn-primary">Postularme!</button>
+      </div>
     </form>
   </div>
 </div>
