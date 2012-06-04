@@ -185,6 +185,7 @@ form.postulacion button.btn-postular {
   position: absolute;
   bottom: 0;
   width: 100%;
+  border-top: 1px solid white;
 }
 
 .footer .footer-inner {
@@ -247,4 +248,11 @@ form.postulacion button.btn-postular {
   font-size: 13px;
   float: left;
   margin: 0 2px 2px 0;
+}
+
+.form-search {
+  background: url('../img/bg-search.png') no-repeat;
+  height: 40px;
+  padding: 24px;
+  margin-bottom: 16px;
 }

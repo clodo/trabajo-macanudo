@@ -29,7 +29,7 @@ button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:poin
 input[type="search"]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield;}
 input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none;}
 textarea{overflow:auto;vertical-align:top;}
-body{margin:0;font-family:trebuchet;font-size:13px;line-height:18px;color:#434343;background-color:#ffffff;}
+body{margin:0;font-family:trebuchet;font-size:13px;line-height:18px;color:#333333;background-color:#ffffff;}
 a{color:#666666;text-decoration:none;}
 a:hover{color:#ffffff;text-decoration:underline;}
 .row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}

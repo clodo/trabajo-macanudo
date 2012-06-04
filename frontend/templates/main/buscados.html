@@ -3,10 +3,10 @@
 {% from "macros/_utils.html" import render_pagination, render_empleo %}
 
 {% block body %}
-  <form class="well form-search" action="{{ url_for('main.buscados') }}" method="GET">
-    <input name="ocupacion" value="{{ request.args.get('ocupacion','') }}" type="text" class="span3 search-query" placeholder="Desarrollador Web Sr." />
-    <input name="tags" value="{{ request.args.get('tags','') }}" type="text" class="span3 search-query autocomplete" placeholder="php, python, mysql" />
-    <input name="lugar" value="{{ request.args.get('lugar','') }}" type="text" class="span3 search-query" placeholder="Capital Federal" />
+  <form class="form-search" action="{{ url_for('main.buscados') }}" method="GET">
+    <input name="ocupacion" value="{{ request.args.get('ocupacion','') }}" type="text" class="input-large search-query" placeholder="Desarrollador Web Sr." />
+    <input name="lugar" value="{{ request.args.get('lugar','') }}" type="text" class="input-large search-query" placeholder="Capital Federal" />
+    <input name="tags" value="{{ request.args.get('tags','') }}" type="text" class="input-xlarge search-query autocomplete" placeholder="php, python, mysql" />
 
     <button type="submit" class="btn btn-primary">Buscar</button>
   </form>
