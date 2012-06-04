@@ -48,6 +48,7 @@ iframe {display:none;}
   color: #11A0B5;
   line-height: 30px;
   text-shadow: 1px 1px 1px white;
+  font-family: 'Open Sans';
 }
 
 .intro-inner h2 {
@@ -55,12 +56,14 @@ iframe {display:none;}
   text-transform: uppercase;
   text-shadow: 1px 1px 1px white;
   line-height: 24px;
+  font-family: 'Open Sans';
 }
 
 .intro-inner p {
-  font-size: 18px;
+  font-size: 16px;
   text-shadow: 1px 1px 1px white;
   line-height: 20px;
+  font-family: 'Open Sans';
 }
 
 .formulario {
