@@ -136,16 +136,15 @@ form.postulacion .submit .alert-error{
 form.postulacion .talentos label, form.postulacion .propuestas label  { text-align: right; width: 245px;}
 form.postulacion input, form.postulacion select  { background: #efefef;}
 
-form.postulacion button.btn {
+
+form.postulacion button.btn-postularme {
   float: right;
-  color: #fff;
-  font-family: 'Press Start 2P', cursive;
-  text-transform: uppercase;
-  font-size: 14px;  
-  padding: 7px 35px;
-	border-radius: 20px;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
+  height: 36px;
+  width: 242px;
+  display: block;
+  background: url('../img/btn-postularme.png') no-repeat;
+  border: none;
+  text-indent:-9999px;
 }
 
 .input_error{
