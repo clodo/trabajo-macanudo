@@ -155,6 +155,7 @@ form.postulacion button.btn {
 
 .navbar-inner {
   background: url('../img/bg-head.gif') repeat;
+  border-bottom: 1px solid white;
 }
 
 .navbar .brand {
