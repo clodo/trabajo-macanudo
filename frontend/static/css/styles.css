@@ -137,13 +137,12 @@ form.postulacion .talentos label, form.postulacion .propuestas label  { text-ali
 form.postulacion input, form.postulacion select  { background: #efefef;}
 
 
-form.postulacion button.btn-postularme {
+form.postulacion button.btn-postular {
   float: right;
   height: 36px;
   width: 242px;
-  display: block;
-  background: url('../img/btn-postularme.png') no-repeat;
   border: none;
+  background: url('../img/btn-postularme.png') no-repeat;
   text-indent:-9999px;
 }
 
@@ -212,11 +211,12 @@ form.postulacion button.btn-postularme {
 }
 
 .box .inner-box h2 {
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: normal;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 0px -1px 1px #0F707E;
 }
 
 .box .inner-box p {
@@ -228,14 +228,13 @@ form.postulacion button.btn-postularme {
   height: 115px;
 }
 
-.box .inner-box button {
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px 12px;
-  text-shadow: 1px 1px 1px white;
-  margin-left: 25px;
+.box .inner-box button.btn-contactar {
+  margin-left: 80px;
+  height: 37px;
+  width: 108px;
+  background: url('../img/btn-contactar.png') no-repeat;
+  text-indent:-9999px;
+  border: none;
 }
 
 .box .inner-box .tags {

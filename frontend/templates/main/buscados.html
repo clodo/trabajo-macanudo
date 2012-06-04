@@ -25,7 +25,7 @@
           <p>Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes.</p>
         </div>
 
-        <button type="submit" class="btn btn-primary">Responder esta publicación</button>
+        <button type="submit" class="btn-contactar">Responder esta publicación</button>
         
         <div class="tags">
           {% for tag in empleo.tags: %}<span class="label label-inverse">{{ tag }}</span> {% endfor %}
