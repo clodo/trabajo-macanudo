@@ -38,8 +38,5 @@ class Empleo(db.Model):
   def __repr__(self):
     return email
 
-  def get_pub_date(self):
-    return self.pub_date
-
   def get_jornada(self):
     return 'Full-time' if self.jornada == self.FULL_TIME else 'Part-time'

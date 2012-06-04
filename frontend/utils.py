@@ -18,7 +18,7 @@ def timesince(dt, default="hace un toque"):
 
   for period, singular, plural in periods:
     if period:
-      return "hace %d %s" % (period, singular if period == 1 else plural)
+      return "Hace %d %s" % (period, singular if period == 1 else plural)
 
   return default
 
