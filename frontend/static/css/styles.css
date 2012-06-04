@@ -252,7 +252,17 @@ form.postulacion button.btn-postular {
 
 .form-search {
   background: url('../img/bg-search.png') no-repeat;
-  height: 40px;
-  padding: 24px;
+  height: 65px;
+  padding: 22px 0 0 0;
   margin-bottom: 16px;
+  text-align: center;
+}
+
+.form-search button.btn-search {
+  margin-left: 10px;
+  height: 32px;
+  width: 134px;
+  background: url('../img/btn-search.png') no-repeat;
+  text-indent:-9999px;
+  border: none;
 }
