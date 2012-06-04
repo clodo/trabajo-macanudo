@@ -177,10 +177,11 @@ form.postulacion button.btn-postular {
 
 .navbar .nav > li > a {
   font-size: 8px;
-  padding: 17px 4px 13px;
+  padding: 17px 6px 13px 10px;
   text-transform: uppercase;
   line-height: 18px;
   font-family: 'Press Start 2P', cursive;
+  background: url('../img/nav-separator.png') no-repeat left 4px;
 }
 
 .navbar .nav > li > a.feedback {
