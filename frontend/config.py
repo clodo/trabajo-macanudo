@@ -31,7 +31,7 @@ class TestConfig(BaseConfig):
   SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/db/test.sqlite' % os.path.dirname(__file__)
 
 class HerokuConfig(BaseConfig):
-  DEBUG = False
+  #DEBUG = False
   SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
   RECAPTCHA_PUBLIC_KEY = '6Lco79ESAAAAAPKyci6r9mVxKzXu9QbSICcRWRnE'
   RECAPTCHA_PRIVATE_KEY = '6Lco79ESAAAAAE6_QrNDFzb9S2J979gk5fDsgDWj'
