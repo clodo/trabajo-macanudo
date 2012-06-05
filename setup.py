@@ -18,7 +18,7 @@ setup(
     'Flask-Script',
     'Flask-Testing',
     'Flask-DebugToolbar',
-    'Babel',
+    'Flask-Babel',
     'python-twitter',
     'nose',
     'factory-boy',

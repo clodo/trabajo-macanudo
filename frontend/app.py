@@ -6,6 +6,7 @@ from flask import Flask, render_template
 from frontend.config import DefaultConfig, HerokuConfig, APP_NAME
 from frontend.views import main, ajax
 from frontend.extensions import db
+from flaskext.babel import Babel
 from flask_debugtoolbar import DebugToolbarExtension
 
 from frontend import utils
@@ -39,6 +40,9 @@ def configure_extensions(app):
 
   # Debug Toolbar
   toolbar = DebugToolbarExtension(app)
+
+  # Babel
+  babel = Babel(app)
 
 def configure_template_filters(app):
   @app.template_filter()
