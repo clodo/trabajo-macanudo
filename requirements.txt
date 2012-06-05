@@ -1,5 +1,6 @@
 Babel==0.9.6
 Flask==0.8
+Flask-Babel==0.8
 Flask-DebugToolbar==0.7.1
 Flask-SQLAlchemy==0.16
 Flask-Script==0.3.3
@@ -11,13 +12,16 @@ WTForms==1.0.1
 Werkzeug==0.8.3
 argparse==1.2.1
 blinker==1.2
+httplib2==0.7.4
 ipython==0.12.1
 nose==1.1.2
+oauth2==1.5.211
+psycopg2==2.4.5
 python-termstyle==0.1.10
+python-twitter==0.8.2
 pytz==2012c
 rednose==0.3.2
 simplejson==2.5.2
 speaklater==1.2
 twill==0.9
 wsgiref==0.1.2
-#psycopg2==2.4.5

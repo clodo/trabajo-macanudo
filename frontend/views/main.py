@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from flask import Blueprint, render_template, flash, redirect, url_for, request
+from flask import Blueprint, render_template, flash, redirect, url_for, request, current_app
 from frontend.models import Empleo, Tag
 from frontend.forms import EmpleoForm
 from frontend.extensions import db
 from frontend.utils import normalizar_tags
+import twitter
 
 mod = Blueprint('main', __name__)
 
@@ -21,6 +22,13 @@ def home():
 
     db.session.add(empleo)
     db.session.commit()
+
+    twitter_api = twitter.api(
+      consumer_key=current_app.config['TWITTER_CONSUMER_KEY'],
+      consumer_secret=current_app.config['TWITTER_CONSULER_SECRET'],
+      access_token_key=current_app.config['TWITTER_TOKEN'],
+      access_token_secret=current_app.config['TWITTER_SECRET']
+    )
 
     flash("Success")
 
