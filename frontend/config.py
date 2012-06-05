@@ -10,23 +10,23 @@ class BaseConfig(object):
   CSRF_ENABLED = True
   
   RECAPTCHA_USE_SSL = True
-  RECAPTCHA_PUBLIC_KEY = ''
-  RECAPTCHA_PRIVATE_KEY = ''
+  RECAPTCHA_PUBLIC_KEY = '6LcK79ESAAAAAKosCIouR-X-9FBawGYE1rEr02FO'
+  RECAPTCHA_PRIVATE_KEY = '6LcK79ESAAAAAKy-jWiShHL0lbmSoEWMixfISNmV'
   RECAPTCHA_OPTIONS = {'theme': 'clean', 'lang': 'es'}
   
   DEBUG_TB_PROFILER_ENABLED = True
   DEBUG_TB_INTERCEPT_REDIRECTS = False
   
-  TWITTER_CONSUMER_KEY = '',
-  TWITTER_CONSULER_SECRET = ''
-  TWITTER_TOKEN = ''
-  TWITTER_SECRET = ''
+  TWITTER_CONSUMER_KEY = 'xV6ojPUAlNUgKDlVuEqS4w',
+  TWITTER_CONSULER_SECRET = '1X1wDMReQkcc2H63mxRJWCykXy5lONhpBZQwsARE'
+  TWITTER_TOKEN = '587752364-ywSbTBnX2AdunBXnx7SnGtIYMencJC4TbFtnDXlB'
+  TWITTER_SECRET = 'EWjVWxWV1FPrse94X3PhdRTleSxux5h0cHuHmaSRA'
 
 class DefaultConfig(BaseConfig):
   DEBUG = True
   SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/db/db.sqlite' % os.path.dirname(__file__)
 
-class TestConfig(BaseConfig):
+class TestingConfig(BaseConfig):
   TESTING = True
   SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/db/test.sqlite' % os.path.dirname(__file__)
 

@@ -4,12 +4,12 @@ warnings.simplefilter("ignore", DeprecationWarning)
 from flaskext.testing import TestCase
 
 from frontend import create_app
-from frontend.config import TestConfig
+from frontend.config import TestingConfig
 from frontend.extensions import db
 
 class FrontendTestCase(TestCase):
   def create_app(self):
-    app = create_app(TestConfig)
+    app = create_app(TestingConfig)
     return app
 
   def setUp(self):
