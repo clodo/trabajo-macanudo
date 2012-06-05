@@ -23,7 +23,7 @@ def home():
     db.session.add(empleo)
     db.session.commit()
 
-    twitter_api = twitter.api(
+    twitter_api = twitter.Api(
       consumer_key=current_app.config['TWITTER_CONSUMER_KEY'],
       consumer_secret=current_app.config['TWITTER_CONSULER_SECRET'],
       access_token_key=current_app.config['TWITTER_TOKEN'],
