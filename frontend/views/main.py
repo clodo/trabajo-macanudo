@@ -30,6 +30,8 @@ def home():
       access_token_secret=current_app.config['TWITTER_SECRET']
     )
 
+    twitter_api.PostUpdate('Probando python-twitter')
+
     flash("Success")
 
     return redirect(url_for('main.home'))
