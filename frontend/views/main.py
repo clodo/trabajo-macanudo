@@ -5,7 +5,7 @@ from frontend.models import Empleo, Tag
 from frontend.forms import EmpleoForm
 from frontend.extensions import db
 from frontend.utils import normalizar_tags
-#import twitter
+import twitter
 
 mod = Blueprint('main', __name__)
 
