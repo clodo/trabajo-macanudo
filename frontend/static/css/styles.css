@@ -284,3 +284,7 @@ form.postulacion button.btn-postular {
   text-indent:-9999px;
   border: none;
 }
+
+.recaptchatable .recaptcha_image_cell{
+  background: transparent!important;
+}
