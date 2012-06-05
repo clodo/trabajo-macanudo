@@ -16,7 +16,6 @@ setup(
     'Flask-SQLAlchemy',
     'Flask-WTF',
     'Flask-Script',
-    'Flask-Babel',
     'Flask-Testing',
     'Flask-DebugToolbar',
     'python-twitter',
