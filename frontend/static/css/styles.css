@@ -289,6 +289,10 @@ form.postulacion button.btn-postular {
   border: none;
 }
 
+.recaptchatable {
+  border: none!important;
+}
+
 .recaptchatable .recaptcha_image_cell{
   background: transparent!important;
 }
