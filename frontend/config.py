@@ -31,7 +31,7 @@ class TestingConfig(BaseConfig):
   SQLALCHEMY_DATABASE_URI = 'sqlite:///%s/db/test.sqlite' % os.path.dirname(__file__)
 
 class HerokuConfig(BaseConfig):
-  DEBUG = True
+  DEBUG = False
   SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProductionConfig(BaseConfig):
