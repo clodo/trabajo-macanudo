@@ -25,7 +25,7 @@ def home():
 
     twitter_api = twitter.Api(
       consumer_key=current_app.config['TWITTER_CONSUMER_KEY'],
-      consumer_secret=current_app.config['TWITTER_CONSULER_SECRET'],
+      consumer_secret=current_app.config['TWITTER_CONSUMER_SECRET'],
       access_token_key=current_app.config['TWITTER_TOKEN'],
       access_token_secret=current_app.config['TWITTER_SECRET']
     )
