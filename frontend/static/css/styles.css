@@ -268,6 +268,10 @@ form.postulacion button.btn-postular {
   margin: 0 2px 2px 0;
 }
 
+.box .inner-box .label-important{
+  background-color: #2cc3d8;
+}
+
 .form-search {
   background: url('../img/bg-search.png') no-repeat;
   height: 65px;

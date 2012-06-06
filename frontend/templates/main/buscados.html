@@ -18,7 +18,6 @@
         <div class="data">
           <h2>{{ empleo.ocupacion }}</h2>
           <p>Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes.</p>
-          <!-- span class="fecha">{{ empleo.pub_date | timesince | safe }}</span -->
         </div>
 
         <button type="submit" class="btn-contactar">Responder esta publicación</button>
