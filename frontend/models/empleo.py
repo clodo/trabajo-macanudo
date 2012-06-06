@@ -36,7 +36,7 @@ class Empleo(db.Model):
     super(Empleo, self).__init__(*args, **kwargs)
 
   def __repr__(self):
-    return email
+    return pub_date
 
   def get_jornada(self):
     return 'Full-time' if self.jornada == self.FULL_TIME else 'Part-time'

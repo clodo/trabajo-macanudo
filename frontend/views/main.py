@@ -30,7 +30,13 @@ def home():
       access_token_secret=current_app.config['TWITTER_SECRET']
     )
 
-    # twitter_api.PostUpdate('Probando python-twitter')
+    twitter_status = '%(ocupacion)s %(jornada)s en la zona de %(lugar)s por %(sueldo)s pesos al mes %(base_url)s' % \
+      { "jornada": empleo.get_jornada(), "ocupacion": empleo.ocupacion, "lugar": empleo.lugar, "sueldo": empleo.sueldo, "base_url": "http://www.trabajomacanudo.com.ar" }
+
+    try:
+      twitter_api.PostUpdate(twitter_status)
+    except:
+      pass
 
     flash("Success")
 

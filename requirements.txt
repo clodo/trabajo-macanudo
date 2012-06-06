@@ -16,7 +16,7 @@ httplib2==0.7.4
 ipython==0.12.1
 nose==1.1.2
 oauth2==1.5.211
-psycopg2==2.4.5
+#psycopg2==2.4.5
 python-termstyle==0.1.10
 python-twitter==0.8.2
 pytz==2012c
