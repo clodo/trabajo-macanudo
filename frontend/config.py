@@ -10,17 +10,17 @@ class BaseConfig(object):
   CSRF_ENABLED = True
   
   RECAPTCHA_USE_SSL = True
-  RECAPTCHA_PUBLIC_KEY = os.getenviron.get('RECAPTCHA_PUBLIC_KEY', None)
-  RECAPTCHA_PRIVATE_KEY = os.getenviron.get('RECAPTCHA_PRIVATE_KEY', None)
+  RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY', None)
+  RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY', None)
   RECAPTCHA_OPTIONS = {'theme': 'clean', 'lang': 'es'}
   
   DEBUG_TB_PROFILER_ENABLED = True
   DEBUG_TB_INTERCEPT_REDIRECTS = False
   
-  TWITTER_CONSUMER_KEY = os.getenviron.get('TWITTER_CONSUMER_KEY', None)
-  TWITTER_CONSUMER_SECRET = os.getenviron.get('TWITTER_CONSUMER_SECRET', None)
-  TWITTER_TOKEN = os.getenviron.get('TWITTER_TOKEN', None)
-  TWITTER_SECRET = os.getenviron.get('TWITTER_SECRET', None)
+  TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY', None)
+  TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET', None)
+  TWITTER_TOKEN = os.environ.get('TWITTER_TOKEN', None)
+  TWITTER_SECRET = os.environ.get('TWITTER_SECRET', None)
 
 class DefaultConfig(BaseConfig):
   DEBUG = True
