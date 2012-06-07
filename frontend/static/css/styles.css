@@ -1,21 +1,12 @@
-html {
-  /* height:100%; */
-}
-
 body {
-/* background-image: url('../img/bg-footer.jpg'); */
   background: url('../img/bg-midd.jpg') repeat;
-  /* height:100%; */
 }
 
 iframe {display:none;} 
 
-.main-container {
-	padding-top: 80px;
-}
-
 .contenido-primario {
 	border-bottom: 1px solid white;
+	margin-top: 80px;
 }
 
 .contenido-secundario {
@@ -23,7 +14,7 @@ iframe {display:none;}
   background: url('../img/bg-content.jpg') repeat;
 }
 
-.contenido-primario.home{
+.contenido-primario.home .container{
   background: url('../img/bg-logo.png') no-repeat 240px 30px;
 }
 
