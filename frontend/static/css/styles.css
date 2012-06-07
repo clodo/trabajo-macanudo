@@ -23,8 +23,12 @@ iframe {display:none;}
 	padding: 80px 0 40px 0;
 }
 
-.home {
+.home-principal {
   background: url('../img/bg-logo.png') no-repeat 240px 30px;
+}
+
+.home-destacados {
+  padding: 30px 0;
 }
 
 .intro {
@@ -87,7 +91,7 @@ form.postulacion input, form.postulacion select {
 form.postulacion {
 /*  padding: 65px 42px 0 43px; */
   padding: 65px 0 0 0;
-  height: 440px;
+  height: 380px;
   text-align: center;
 }
 

@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_input %}
+{% from "macros/_utils.html" import render_input, render_empleo %}
 
 {% block body %}
-<div class="row home">
+<div class="row home-principal">
   <div class="span5 intro">
     <div class="intro-inner">
       <hr />
@@ -69,5 +69,11 @@
       </div>
     </form>
   </div>
+</div>
+
+<div class="row home-destacados">
+  {% for empleo in empleos %}
+    {{ render_empleo(empleo) }}
+  {% endfor %}
 </div>
 {% endblock %}

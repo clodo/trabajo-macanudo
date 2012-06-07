@@ -42,7 +42,9 @@ def home():
 
     return redirect(url_for('main.home'))
 
-  return render_template('main/home.html', form=form)
+  empleos = Empleo.query.order_by(Empleo.pub_date.desc()).limit(6)
+
+  return render_template('main/home.html', form=form, empleos=empleos)
 
 @mod.route("/buscados/")
 @mod.route("/buscados/<int:page>")

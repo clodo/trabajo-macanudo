@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_pagination %}
+{% from "macros/_utils.html" import render_pagination, render_empleo %}
 
 {% block body %}
   <form class="form-search" action="{{ url_for('main.buscados') }}" method="GET">
@@ -13,21 +13,7 @@
 
   <div class="row">
     {% for empleo in empleos.items %}
-    <div class="span4 box">
-      <div class="inner-box">
-        <div class="data">
-          <h2>{{ empleo.ocupacion }}</h2>
-          <p>Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes.</p>
-        </div>
-
-        <button type="submit" class="btn-contactar">Responder esta publicación</button>
-        
-        <div class="tags">
-          <span class="label label-important">{{ empleo.pub_date | timesince | safe }}</span>
-          {% for tag in empleo.tags: %}<span class="label label-inverse">{{ tag }}</span> {% endfor %}
-        </div>
-      </div>
-    </div>
+      {{ render_empleo(empleo) }}
     {% endfor %}
   </div>
   
