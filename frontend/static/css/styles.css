@@ -14,16 +14,16 @@ iframe {display:none;}
 	padding-top: 80px;
 }
 
-.home-principal {
+.contenido-primario {
 	border-bottom: 1px solid white;
 }
 
-.home-destacados {
+.contenido-secundario {
   padding: 15px 0;
   background: url('../img/bg-content.jpg') repeat;
 }
 
-.home-principal .container{
+.contenido-primario.home{
   background: url('../img/bg-logo.png') no-repeat 240px 30px;
 }
 
