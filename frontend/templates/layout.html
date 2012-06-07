@@ -19,57 +19,52 @@
   <![endif]-->
 </head>
 <body>
-	<div class="contenido-externo">
-		<div id="wrapper">
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="{{ url_for('main.home') }}">Trabajo Macanudo</a>
-            <div class="nav-collapse">
-              <ul class="nav">
-                <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li>
-                <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
-                <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li>
-                <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
-                <li><a class="feedback" href="#">Feedback!</a></li>
-                <li><a class="facebook" href="https://www.facebook.com/TrabajoMacanudo" target="_blank" title="Seguinos en Facebook!"><img src="{{ url_for('static', filename='img/ico-fcbk.png') }}" alt="facebook" /></a></li>
-                <li><a class="twitter" href="https://twitter.com/#!/TrabajoMacanudo" target="_blank" title="Seguinos en Twitter"><img src="{{ url_for('static', filename='img/ico-twitter.png') }}" alt="twitter" /></a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div>
-        </div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="{{ url_for('main.home') }}">Trabajo Macanudo</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li>
+            <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li>
+            <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li>
+            <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li>
+            <li><a class="feedback" href="#">Feedback!</a></li>
+            <li><a class="facebook" href="https://www.facebook.com/TrabajoMacanudo" target="_blank" title="Seguinos en Facebook!"><img src="{{ url_for('static', filename='img/ico-fcbk.png') }}" alt="facebook" /></a></li>
+            <li><a class="twitter" href="https://twitter.com/#!/TrabajoMacanudo" target="_blank" title="Seguinos en Twitter"><img src="{{ url_for('static', filename='img/ico-twitter.png') }}" alt="twitter" /></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
+    </div>
+  </div>
 
-      <div class="container" id="main">
-        {% block body %}{% endblock %}
-      </div> <!-- /container -->
+  <div class="main-container">
+    {% block body %}{% endblock %}
+   </div>
 
-      <div class="footer footer-fixed-bottom">
-        <div class="footer-inner">
-          <div class="container">
-            <div class="pull-left">
-              <p>Copyright © 2012 <a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a></p>
-            </div>
-            <div class="pull-right">
-              <ul class="unstyled">
-                <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li> |
-                <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li> |
-                <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li> |
-                <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li> |
-                <li><a class="feedback" href="#">Feedback!</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <ul class="span4">
+          <li>Copyright © 2012</li>
+          <li><a href="http://www.elgalpondebanquito.com.ar" target="_blank">Banquito</a></li>
+        </ul>
+        <ul class="span8" style="text-align: right">
+          <li><a href="{{ url_for('main.buscados') }}">Buscados</a></li> |
+          <li><a href="{{ url_for('main.ofrecidos') }}">Ofrecidos</a></li> |
+          <li><a href="{{ url_for('main.acercade') }}">Acerca</a></li> |
+          <li><a href="{{ url_for('main.contacto') }}">Contacto</a></li> |
+          <li><a class="feedback" href="#">Feedback!</a></li>
+        </ul>
       </div>
+    </div>
+  </footer>
 
-	  </div><!--wrapper-->	
-  </div><!--contenido-externo-->
 
   <!-- a href="http://github.com/clodo/trabajo-macanudo">
     <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 2000"
