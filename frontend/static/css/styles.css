@@ -188,6 +188,10 @@ form.postulacion button.btn-postular {
   color: #ff3c00;
 }
 
+.navbar .nav > li > a.facebook, .navbar .nav > li > a.twitter {
+  padding: 10px 2px 0 0px;
+}
+
 .footer {
   margin-top: 50px;
   background: url('../img/bg-footer.jpg') repeat;
