@@ -35,7 +35,7 @@ iframe {display:none;}
   color: #11A0B5;
   line-height: 30px;
   text-shadow: 1px 1px 1px white;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
 }
 
 .intro-inner h2 {
@@ -43,14 +43,14 @@ iframe {display:none;}
   text-transform: uppercase;
   text-shadow: 1px 1px 1px white;
   line-height: 24px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
 }
 
 .intro-inner p {
   font-size: 16px;
   text-shadow: 1px 1px 1px white;
   line-height: 20px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-style: italic;
 }
 
@@ -225,7 +225,7 @@ footer li {
 .box .inner-box span.fecha {
   float: right;
   margin-right: 10px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-size: 10px;
   line-height: 10px;
 }
@@ -292,7 +292,7 @@ footer li {
 
 .feedback-box h2 {
   color: #7f7f7f;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   line-height: 30px;
