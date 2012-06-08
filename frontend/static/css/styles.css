@@ -279,3 +279,29 @@ footer li {
 .recaptchatable .recaptcha_image_cell{
   background: transparent!important;
 }
+
+.feedback-box {
+  background: url('../img/bg-feedback.png') no-repeat;;
+  margin: 0 auto;
+  width: 708px;
+  height: 372px;
+  text-align: center;
+  padding-top: 15px;
+  margin-bottom: 40px;
+}
+
+.feedback-box h2 {
+  color: #7f7f7f;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 30px;
+}
+
+.feedback-box p {
+  color: #7f7f7f;
+}
+
+.feedback-box .caritas {
+  height: 246px;
+}
