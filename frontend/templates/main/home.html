@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_input, render_empleo %}
+{% from "macros/_utils.html" import render_input, render_macanudo %}
 
 {% block body %}
 <div class="contenido-primario home">
@@ -78,8 +78,8 @@
 <div class="contenido-secundario">
   <div class="container">
     <div class="row">
-      {% for empleo in empleos %}
-        {{ render_empleo(empleo) }}
+      {% for macanudo in macanudos %}
+        {{ render_macanudo(macanudo) }}
       {% endfor %}
     </div>
   </div>
