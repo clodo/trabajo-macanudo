@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from flask import Blueprint, render_template, flash, redirect, url_for, request, current_app
-from frontend.models import Empleo, Tag
-from frontend.forms import EmpleoForm
+from frontend.models import Macanudo, Tag, TrabajoMacanudo
+from frontend.forms import MacanudoForm, TrabajoMacanudoForm
 from frontend.extensions import db
 from frontend.utils import normalizar_tags
 import twitter
@@ -11,16 +11,16 @@ mod = Blueprint('main', __name__)
 
 @mod.route('/', methods=("GET", "POST"))
 def home():
-  form = EmpleoForm()
+  form = MacanudoForm()
   if form.validate_on_submit():
-    empleo = Empleo()
-    form.populate_obj(empleo)
+    macanudo = Macanudo()
+    form.populate_obj(macanudo)
 
     for tag_name in normalizar_tags(form.habilidades.data):
       t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
-      empleo.tags.append(t)
+      macanudo.tags.append(t)
 
-    db.session.add(empleo)
+    db.session.add(macanudo)
     db.session.commit()
 
     twitter_api = twitter.Api(
@@ -31,7 +31,7 @@ def home():
     )
 
     twitter_status = '%(ocupacion)s %(jornada)s en la zona de %(lugar)s por %(sueldo)s pesos al mes %(base_url)s' % \
-      { "jornada": empleo.get_jornada(), "ocupacion": empleo.ocupacion, "lugar": empleo.lugar, "sueldo": empleo.sueldo, "base_url": "http://www.trabajomacanudo.com.ar" }
+      { "jornada": macanudo.get_jornada(), "ocupacion": macanudo.ocupacion, "lugar": macanudo.lugar, "sueldo": macanudo.sueldo, "base_url": "http://www.trabajomacanudo.com.ar" }
 
     try:
       twitter_api.PostUpdate(twitter_status)
@@ -42,24 +42,43 @@ def home():
 
     return redirect(url_for('main.home'))
 
-  empleos = Empleo.query.order_by(Empleo.pub_date.desc()).limit(6)
+  macanudos = Macanudo.query.order_by(Macanudo.pub_date.desc()).limit(6)
 
-  return render_template('main/home.html', form=form, empleos=empleos)
+  return render_template('main/home.html', form=form, macanudos=macanudos)
 
 @mod.route("/buscados/")
 @mod.route("/buscados/<int:page>")
 def buscados(page=1):
   filter_tags = normalizar_tags(request.args.get('tags') or '')
   
-  empleos_query = Empleo.query.order_by(Empleo.pub_date.desc())
+  macanudos_query = Macanudo.query.order_by(Macanudo.pub_date.desc())
   
   if len(filter_tags) > 0:
-    empleos_query = empleos_query.join(Empleo.tags).filter(Tag.name.in_(filter_tags))
+    macanudos_query = macanudos_query.join(Macanudo.tags).filter(Tag.name.in_(filter_tags))
 
-  empleos = empleos_query.paginate(page, 20)
+  macanudos = macanudos_query.paginate(page, 20)
 
-  #empleos = Empleo.query.join(Empleo.tags).filter(Tag.name.in_(tags)).order_by(Empleo.pub_date.desc()).paginate(page, 20)
-  return render_template('main/buscados.html', empleos=empleos)
+  #macanudos = Macanudo.query.join(Macanudo.tags).filter(Tag.name.in_(tags)).order_by(Macanudo.pub_date.desc()).paginate(page, 20)
+  return render_template('main/buscados.html', macanudos=macanudos)
+
+@mod.route("/ofrecer-trabajo-macanudo/", methods=("GET", "POST"))
+def ofrecer_trabajo_macanudo():
+  form = TrabajoMacanudoForm()
+  if form.validate_on_submit():
+    trabajo_macanudo = TrabajoMacanudo()
+    form.populate_obj(trabajo_macanudo)
+
+    for tag_name in normalizar_tags(form.habilidades.data):
+      t = Tag.query.filter_by(name=tag_name).first() or Tag(tag_name)
+      trabajo_macanudo.tags.append(t)
+
+    db.session.add(trabajo_macanudo)
+    db.session.commit()
+
+    flash("Success")
+    return redirect(url_for('main.ofrecidos'))
+
+  return render_template('main/ofrecer.html', form = form)
 
 @mod.route("/ofrecidos/")
 def ofrecidos():

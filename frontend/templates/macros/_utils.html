@@ -22,19 +22,19 @@
   {% endif %}
 {% endmacro %}
 
-{% macro render_empleo(empleo) %}
+{% macro render_macanudo(macanudo) %}
 <div class="span4 box">
   <div class="inner-box">
     <div class="data">
-      <h2>{{ empleo.ocupacion }}</h2>
-      <p>Quiero trabajar <b>{{ empleo.get_jornada() }}</b> como <b>{{ empleo.ocupacion }}</b> en la zona de <b>{{ empleo.lugar }}</b> y ganar <b>{{ empleo.sueldo }}</b> pesos por mes.</p>
+      <h2>{{ macanudo.ocupacion }}</h2>
+      <p>Quiero trabajar <b>{{ macanudo.get_jornada() }}</b> como <b>{{ macanudo.ocupacion }}</b> en la zona de <b>{{ macanudo.lugar }}</b> y ganar <b>{{ macanudo.sueldo }}</b> pesos por mes.</p>
     </div>
 
     <button type="submit" class="btn-contactar">Responder esta publicación</button>
     
     <div class="tags">
-      <span class="label label-important">{{ empleo.pub_date | timesince | safe }}</span>
-      {% for tag in empleo.tags: %}<span class="label label-inverse">{{ tag }}</span> {% endfor %}
+      <span class="label label-important">{{ macanudo.pub_date | timesince | safe }}</span>
+      {% for tag in macanudo.tags: %}<span class="label label-inverse">{{ tag }}</span> {% endfor %}
     </div>
   </div>
 </div>

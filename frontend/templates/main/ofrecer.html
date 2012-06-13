@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% from "macros/_utils.html" import render_input, %}
+
+{% block body %}
+<div class="contenido-primario">
+  <div class="container">
+    <div class="span7 formulario">
+        <form class="form-inline postulacion" action="{{ url_for('main.ofrecer_trabajo_macanudo') }}" method="post">
+          {{ form.hidden_tag() }}
+          <div class="campo">
+            <label>Se buscan personas macanudas con</label> 
+            {{ render_input(form.experiencia, 'uno', '') }}
+          </div>
+          <div class="campo">
+            <label>para el puesto de</label> 
+            {{ render_input(form.ocupacion, 'Desarrollador Web Sr.', '')}}
+          </div>
+
+          <div class="campo">
+            <label>con conocimientos en </label> 
+            {{ render_input(form.habilidades, 'python, ruby, mysql', ' autocomplete') }}
+          </div>
+          <div class="sobre_la_empresa">
+            <label>Y un poco sobre la empresa y sus beneficios</label> 
+            {{ render_input(form.sobre_la_empresa, 'python, ruby, mysql', ' autocomplete') }}
+          </div>
+
+          <div class="propuestas">
+            <label>Mandame las propuestas acá </label> 
+            {{ render_input(form.email, 'ofrezco@laburo.co.pa.do', '') }}
+          </div>
+
+          <div class="captcha">
+            {{ form.recaptcha()|safe }}
+          </div>
+          
+          <div class="submit">
+            {% if form.errors %}
+            <div class="alert alert-error">
+              <button class="close" data-dismiss="alert">×</button>
+              Completá todos los campos!
+            </div>
+            {% endif %}
+            
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert">×</button>
+                    <strong>Enhorabuena!</strong> Gracias por registrarte en "Trabajo Macanudo", muy pronto vas a recibir miles de propuestas.
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            
+            <button type="submit" class="btn-postular">Postularme!</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<div class="contenido-secundario">
+  <div class="container">
+    <div class="row">
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,1 +1,1 @@
-from frontend.models.empleo import Empleo, Tag
+from frontend.models.macanudo import Macanudo, Tag, TrabajoMacanudo

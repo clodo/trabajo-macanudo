@@ -1,1 +1,1 @@
-from frontend.forms.empleo import EmpleoForm
+from frontend.forms.macanudo import MacanudoFormfrom frontend.forms.trabajo_macanudo import TrabajoMacanudoForm
