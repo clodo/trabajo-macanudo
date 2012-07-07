@@ -39,3 +39,32 @@
   </div>
 </div>
 {% endmacro %}
+
+{% macro render_trabajo_macanudo(trabajo_macanudo) %}
+<div class="span4 box">
+  <div class="inner-box">
+    <div class="data">
+      <h2>{{ trabajo_macanudo.ocupacion }}</h2>
+        <p>
+            Se buscan personas con 
+            <b>{{ trabajo_macanudo.get_jornada() }}</b> 
+            para el puesto  de
+            <b>{{ trabajo_macanudo.ocupacion }}</b> 
+            con conocimientos en
+            <b>{{ trabajo_macanudo.experiencia }}</b>
+            para hacer
+            <b>{{ trabajo_macanudo.sobre_el_puesto }}</b>
+        </p>
+    </div>
+
+    <button type="submit" class="btn-contactar">
+        Responder esta publicación
+    </button>
+    
+    <div class="tags">
+      <span class="label label-important">{{ trabajo_macanudo.pub_date | timesince | safe }}</span>
+      {% for tag in trabajo_macanudo.tags: %}<span class="label label-inverse">{{ tag }}</span> {% endfor %}
+    </div>
+  </div>
+</div>
+{% endmacro %}

@@ -81,8 +81,17 @@ def ofrecer_trabajo_macanudo():
   return render_template('main/ofrecer.html', form = form)
 
 @mod.route("/ofrecidos/")
-def ofrecidos():
-  return render_template('main/ofrecidos.html')
+@mod.route("/ofrecidos/<int:page>")
+def ofrecidos(page=1):
+  trabajo_macanudos_query = TrabajoMacanudo.query.order_by(TrabajoMacanudo.pub_date.desc())
+  
+  filter_tags = normalizar_tags(request.args.get('tags') or '')
+  if len(filter_tags) > 0:
+    trabajo_macanudos_query = trabajo_macanudos_query.join(TrabajoMacanudo.tags).filter(Tag.name.in_(filter_tags))
+
+  trabajo_macanudos = trabajo_macanudos_query.paginate(page, 20)
+
+  return render_template('main/ofrecidos.html', trabajo_macanudos = trabajo_macanudos)
 
 @mod.route("/contacto/")
 def contacto():

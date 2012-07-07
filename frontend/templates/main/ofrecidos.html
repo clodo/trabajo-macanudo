@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 
+{% from "macros/_utils.html" import render_pagination, render_macanudo %}
+
 {% block body %}
 <div class="contenido-primario">
   <div class="container">
@@ -16,6 +18,9 @@
 <div class="contenido-secundario">
   <div class="container">
     <div class="row">
+      {% for trabajo_macanudo in trabajo_macanudos.items %}
+        {{ render_trabajo_macanudo(trabajo_macanudo) }}
+      {% endfor %}
     </div>
   </div>
 </div>
