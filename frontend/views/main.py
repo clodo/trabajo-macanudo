@@ -7,6 +7,9 @@ from frontend.extensions import db
 from frontend.utils import normalizar_tags
 import twitter
 
+# from juggernaut import Juggernaut
+# jug = Juggernaut()
+
 mod = Blueprint('main', __name__)
 
 @mod.route('/', methods=("GET", "POST"))
@@ -37,6 +40,8 @@ def home():
     #  twitter_api.PostUpdate(twitter_status)
     #except:
     #  pass
+
+    #jug.publish('channel1', { 'ocupacion': macanudo.ocupacion })
 
     flash("Success")
 

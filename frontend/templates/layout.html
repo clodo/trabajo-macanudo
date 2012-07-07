@@ -63,7 +63,6 @@
     </div>
   </footer>
 
-
   <!-- a href="http://github.com/clodo/trabajo-macanudo">
     <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 2000"
     src="{{ url_for('static', filename='img/github_ribbon.png') }}" alt="Fork me on GitHub">
@@ -75,6 +74,17 @@
   <script src="{{ url_for('static', filename='js/jquery-ui-1.8.16.custom.min.js') }}"></script>
   <!-- script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script -->
   <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  
+  <script src="http://localhost:8080/application.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+   jQuery(function($){
+     var jug = new Juggernaut;
+     jug.subscribe("channel1", function(data){
+       // alert(data.ocupacion);
+     });
+   });
+  </script>
 
   <script>
     var _gaq=[['_setAccount','UA-32116354-1'],['_trackPageview']];
