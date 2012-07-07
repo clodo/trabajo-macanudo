@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 
+{% from "macros/_utils.html" import render_trabajo_macanudo %}
+
 {% block body %}
 <div class="contenido-primario">
   <div class="container">
-    <form class="form-search" action="{{ url_for('main.ofrecidos') }}" method="GET">
+    <form class="form-search" action="{{ url_for('main.buscados') }}" method="GET">
       <input name="ocupacion" value="{{ request.args.get('ocupacion','') }}" type="text" class="input-large search-query" placeholder="Desarrollador Web Sr." />
       <input name="lugar" value="{{ request.args.get('lugar','') }}" type="text" class="input-large search-query" placeholder="Capital Federal" />
       <input name="tags" value="{{ request.args.get('tags','') }}" type="text" class="input-xlarge search-query autocomplete" placeholder="php, python, mysql" />
@@ -16,6 +18,9 @@
 <div class="contenido-secundario">
   <div class="container">
     <div class="row" id="box-container">
+      {% for trabajo_macanudo in trabajo_macanudos.items %}
+        {{ render_trabajo_macanudo(trabajo_macanudo) }}
+      {% endfor %}
     </div>
   </div>
 </div>

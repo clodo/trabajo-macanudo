@@ -59,6 +59,7 @@ class TrabajoMacanudo(db.Model):
   experiencia = db.Column(db.Integer)
   ocupacion = db.Column(db.String(120))
   sobre_la_empresa = db.Column(db.Text)
+  sobre_el_puesto = db.Column(db.Text)
   pub_date = db.Column(db.DateTime(), default=datetime.utcnow)
 
   def __init__(self, *args, **kwargs):

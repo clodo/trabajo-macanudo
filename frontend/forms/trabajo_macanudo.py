@@ -11,3 +11,4 @@ class TrabajoMacanudoForm(Form):
   ocupacion = TextField('Ocupación', validators=[Required()])
   recaptcha = RecaptchaField()
   sobre_la_empresa = TextAreaField('Sobre la Empresa', validators=[Required()])
+  sobre_el_puesto = TextAreaField('Sobre el puesto', validators=[Required()])

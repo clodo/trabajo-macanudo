@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% from "macros/_utils.html" import render_input, %}
+{% from "macros/_utils.html" import render_input %}
 
 {% block body %}
 <div class="contenido-primario">
@@ -20,6 +20,10 @@
           <div class="campo">
             <label>con conocimientos en </label> 
             {{ render_input(form.habilidades, 'python, ruby, mysql', ' autocomplete') }}
+          </div>
+          <div class="sobre_el_puesto">
+            <label>El puesto trata de</label> 
+            {{ render_input(form.sobre_el_puesto, 'lala', ' autocomplete') }}
           </div>
           <div class="sobre_la_empresa">
             <label>Y un poco sobre la empresa y sus beneficios</label> 
