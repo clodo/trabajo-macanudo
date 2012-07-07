@@ -25,3 +25,4 @@ simplejson==2.5.2
 speaklater==1.2
 twill==0.9
 wsgiref==0.1.2
+juggernaut==0.2
