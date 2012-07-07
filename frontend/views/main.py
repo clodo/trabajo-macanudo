@@ -33,10 +33,10 @@ def home():
     twitter_status = '%(ocupacion)s %(jornada)s en la zona de %(lugar)s por %(sueldo)s pesos al mes %(base_url)s' % \
       { "jornada": macanudo.get_jornada(), "ocupacion": macanudo.ocupacion, "lugar": macanudo.lugar, "sueldo": macanudo.sueldo, "base_url": "http://www.trabajomacanudo.com.ar" }
 
-    try:
-      twitter_api.PostUpdate(twitter_status)
-    except:
-      pass
+    #try:
+    #  twitter_api.PostUpdate(twitter_status)
+    #except:
+    #  pass
 
     flash("Success")
 
@@ -46,9 +46,9 @@ def home():
 
   return render_template('main/home.html', form=form, macanudos=macanudos)
 
-@mod.route("/buscados/")
-@mod.route("/buscados/<int:page>")
-def buscados(page=1):
+@mod.route("/ofrecidos/")
+@mod.route("/ofrecidos/<int:page>")
+def ofrecidos(page=1):
   filter_tags = normalizar_tags(request.args.get('tags') or '')
   
   macanudos_query = Macanudo.query.order_by(Macanudo.pub_date.desc())
@@ -59,7 +59,7 @@ def buscados(page=1):
   macanudos = macanudos_query.paginate(page, 20)
 
   #macanudos = Macanudo.query.join(Macanudo.tags).filter(Tag.name.in_(tags)).order_by(Macanudo.pub_date.desc()).paginate(page, 20)
-  return render_template('main/buscados.html', macanudos=macanudos)
+  return render_template('main/ofrecidos.html', macanudos=macanudos)
 
 @mod.route("/ofrecer-trabajo-macanudo/", methods=("GET", "POST"))
 def ofrecer_trabajo_macanudo():
@@ -80,14 +80,14 @@ def ofrecer_trabajo_macanudo():
 
   return render_template('main/ofrecer.html', form = form)
 
-@mod.route("/ofrecidos/")
-def ofrecidos():
-  return render_template('main/ofrecidos.html')
+@mod.route("/buscados/")
+def buscados():
+  return render_template('main/buscados.html')
 
 @mod.route("/contacto/")
 def contacto():
   return render_template('main/contacto.html')
 
-@mod.route("/acerca-de/")
+@mod.route("/acercade/")
 def acercade():
   return render_template('main/acercade.html')

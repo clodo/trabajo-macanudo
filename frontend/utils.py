@@ -2,18 +2,18 @@
 
 from datetime import datetime
 
-def timesince(dt, default="hace un toque"):
+def timesince(dt, default=u'Recién'):
   now = datetime.utcnow()
   diff = now - dt
     
   periods = (
-    (diff.days / 365, "a&ntilde;o", "a&ntilde;os"),
-    (diff.days / 30, "mes", "meses"),
-    (diff.days / 7, "semana", "semanas"),
-    (diff.days, "d&iacute;a", "d&iacute;as"),
-    (diff.seconds / 3600, "hora", "horas"),
-    (diff.seconds / 60, "minuto", "minutos"),
-    (diff.seconds, "segundo", "segundos"),
+    (diff.days / 365, u'año', u'años'),
+    (diff.days / 30, u'mes', u'meses'),
+    (diff.days / 7, u'semana', u'semanas'),
+    (diff.days, u'día', u'días'),
+    (diff.seconds / 3600, u'hora', u'horas'),
+    (diff.seconds / 60, u'minuto', u'minutos'),
+    (diff.seconds, u'segundo', u'segundos'),
   )
 
   for period, singular, plural in periods:
