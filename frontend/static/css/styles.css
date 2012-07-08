@@ -59,6 +59,11 @@ iframe {display:none;}
 /*  min-width: 600px; */
 }
 
+.formulario-empresas {
+  background: url('../img/bg-consultora.png') no-repeat center top;
+/*  min-width: 600px; */
+}
+
 form.postulacion label {
   font-family: jrhandRegular;
   font-size: 18px;

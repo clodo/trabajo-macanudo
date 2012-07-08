@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from flask import Blueprint, render_template, flash, redirect, url_for, request, current_app
 from frontend.models import Macanudo, Tag, TrabajoMacanudo
 from frontend.forms import MacanudoForm, TrabajoMacanudoForm
@@ -7,8 +6,8 @@ from frontend.extensions import db
 from frontend.utils import normalizar_tags
 import twitter
 
-# from juggernaut import Juggernaut
-# jug = Juggernaut()
+from juggernaut import Juggernaut
+jug = Juggernaut()
 
 mod = Blueprint('main', __name__)
 
@@ -36,12 +35,13 @@ def home():
     twitter_status = '%(ocupacion)s %(jornada)s en la zona de %(lugar)s por %(sueldo)s pesos al mes %(base_url)s' % \
       { "jornada": macanudo.get_jornada(), "ocupacion": macanudo.ocupacion, "lugar": macanudo.lugar, "sueldo": macanudo.sueldo, "base_url": "http://www.trabajomacanudo.com.ar" }
 
-    #try:
-    #  twitter_api.PostUpdate(twitter_status)
-    #except:
-    #  pass
+    if(not current_app.debug):
+      try:
+        twitter_api.PostUpdate(twitter_status)
+      except:
+        pass
 
-    #jug.publish('channel1', { 'ocupacion': macanudo.ocupacion })
+    jug.publish('channel1', { 'ocupacion': macanudo.ocupacion })
 
     flash("Success")
 
