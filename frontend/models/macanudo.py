@@ -25,6 +25,7 @@ class Tag(db.Model):
   def __repr__(self):
     return self.name
 
+import uuid
 class Macanudo(db.Model):
   FULL_TIME = 100
   PART_TIME = 200
@@ -36,6 +37,7 @@ class Macanudo(db.Model):
   sueldo = db.Column(db.Integer)
   lugar = db.Column(db.String(120))
   pub_date = db.Column(db.DateTime(), default=datetime.utcnow)
+  emailKey = db.Column(db.String(40), default = str( uuid.uuid1()) )
 
   #tags = db.relationship('Tag', secondary=tags, backref=db.backref('macanudos', lazy='joined'))
 
@@ -43,7 +45,7 @@ class Macanudo(db.Model):
     super(Macanudo, self).__init__(*args, **kwargs)
 
   def __repr__(self):
-    return pub_date
+    return str(self.pub_date)
 
   def get_jornada(self):
     return 'Full-time' if self.jornada == self.FULL_TIME else 'Part-time'
@@ -66,7 +68,7 @@ class TrabajoMacanudo(db.Model):
     super(TrabajoMacanudo, self).__init__(*args, **kwargs)
 
   def __repr__(self):
-    return pub_date
+    return str(self.pub_date)
 
   def get_jornada(self):
     return self.EXPERIENCIAS[self.experiencia]

@@ -7,5 +7,5 @@ class MacanudoForm(Form):
   jornada = SelectField('Jornada', choices=[('100', 'Full-time'), ('200', 'Part-time')])
   lugar = TextField('Lugar', validators=[Required()])
   ocupacion = TextField('Ocupación', validators=[Required()])
-  recaptcha = RecaptchaField()
+  recaptcha = TextField('Ocupación')
   sueldo = IntegerField('Sueldo', validators=[Required()])
