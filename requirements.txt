@@ -12,7 +12,7 @@ WTForms==1.0.1
 Werkzeug==0.8.3
 argparse==1.2.1
 blinker==1.2
-httplib2==0.7.4
+httplib2==0.18.0
 ipython==0.12.1
 nose==1.1.2
 oauth2==1.5.211
